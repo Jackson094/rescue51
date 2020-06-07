@@ -44,6 +44,7 @@ position = Vector2( 4060, 80 )
 next_scene = ExtResource( 5 )
 
 [node name="Coins" type="Node2D" parent="."]
+visible = false
 
 [node name="Coin" parent="Coins" instance=ExtResource( 2 )]
 position = Vector2( 1250, 570 )

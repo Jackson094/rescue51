@@ -10,43 +10,20 @@ height = 93.4486
 [sub_resource type="Animation" id=2]
 resource_name = "START"
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("TransitionLayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ) ]
-}
 
 [sub_resource type="Animation" id=3]
 length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("TransitionLayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
-}
 
 [node name="Portal2D" type="Area2D"]
+position = Vector2( -2040.87, 269.77 )
 monitorable = false
 collision_layer = 0
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.6 )
-position = Vector2( 11.7292, -135.864 )
-scale = Vector2( 0.589481, 0.442867 )
+position = Vector2( -29.3628, -132.797 )
+scale = Vector2( 0.276705, 0.218059 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
