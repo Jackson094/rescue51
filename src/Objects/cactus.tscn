@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ca.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "bouncing"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("c:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.707107, 2.63902 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 0, -100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("c:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.603922 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fadeout"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("c:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.12549 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 53.0868, 87.9192 )
+
+[node name="cactus" type="Area2D"]
+position = Vector2( 0, -31.6312 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bouncing = SubResource( 1 )
+anims/fadeout = SubResource( 2 )
+
+[node name="c" type="Sprite" parent="."]
+light_mask = 0
+texture = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+pause_mode = 1
+self_modulate = Color( 1, 1, 1, 0.878431 )
+show_behind_parent = true
+light_mask = 0
+material = SubResource( 3 )
+use_parent_material = true
+position = Vector2( 1.62207, -16.6919 )
+shape = SubResource( 4 )
