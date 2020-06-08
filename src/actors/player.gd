@@ -4,6 +4,7 @@ export var stomp_impulse: = 200.0
 
 const FLOOR = Vector2(0,-1)
 const GRAVITY = 20
+const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 
 var velocity = Vector2()
 var on_floor = false
@@ -33,6 +34,11 @@ func _physics_process(delta):
 		velocity.x = 0
 		if on_floor == true:
 			$AnimatedSprite.play("idle")
+			
+	if Input.is_action_just_pressed("ui_focus_next"):
+		var fireball = FIREBALL.instance()
+		get_parent().add_child(fireball)
+		fireball.position = $Position2D.global_position
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
