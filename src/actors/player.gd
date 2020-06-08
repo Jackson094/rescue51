@@ -42,8 +42,9 @@ func _physics_process(delta):
 			$AnimatedSprite.play("idle")
 			
 	if Input.is_action_just_pressed("ui_focus_next") and not (Input.is_action_just_released("ui_right") or 
-			Input.is_action_just_released("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") 
-			or Input.is_action_just_released("ui_up") or Input.is_action_pressed("ui_up")):
+			Input.is_action_just_released("ui_left") or Input.is_action_pressed("ui_right") or 
+			Input.is_action_pressed("ui_left") or Input.is_action_just_released("ui_up") or 
+			Input.is_action_pressed("ui_up")):
 		$AnimatedSprite.play("shooting")
 		var fireball = FIREBALL.instance()
 		if sign($Position2D.position.x) == 1:
