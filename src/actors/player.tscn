@@ -17,25 +17,25 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 11.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "fall",
 "speed": 1.5
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "idle",
-"speed": 11.0
+"name": "run",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -50,7 +50,6 @@ extents = Vector2( 21.8204, 10.7155 )
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 4
 script = ExtResource( 1 )
-stomp_impulse = 200.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 32, -64 )
@@ -90,5 +89,8 @@ collision_mask = 16
 modulate = Color( 0.337255, 0.223529, 1, 1 )
 position = Vector2( 32.4944, -12.7029 )
 shape = SubResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 69, -52 )
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]
