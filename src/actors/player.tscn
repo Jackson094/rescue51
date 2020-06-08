@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/BlueAlien/BlueAlienJump/blue__0030_jump_4.png" type="Texture" id=2]
@@ -14,35 +14,43 @@
 [ext_resource path="res://assets/BlueAlien/BlueAlienWalk/blue__0006_walk_1.png" type="Texture" id=12]
 [ext_resource path="res://assets/BlueAlien/BlueAlienWalk/blue__0008_walk_3.png" type="Texture" id=13]
 [ext_resource path="res://assets/BlueAlien/BlueAlienWalk/blue__0009_walk_4.png" type="Texture" id=14]
+[ext_resource path="res://assets/BlueAlien/BlueAlienShoot/blue__0038_fire_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/BlueAlien/BlueAlienShoot/blue__0039_fire_4.png" type="Texture" id=17]
+[ext_resource path="res://assets/BlueAlien/BlueAlienShoot/blue__0037_fire_2.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "idle",
-"speed": 11.0
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "shooting",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "fall",
 "speed": 1.5
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 64.2971 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 27.5008, 64.2971 )
+extents = Vector2( 27.5008, 56.3426 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 21.8204, 10.7155 )
@@ -55,7 +63,7 @@ script = ExtResource( 1 )
 position = Vector2( 32, -64 )
 scale = Vector2( 0.275048, 0.285872 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "shooting"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -79,7 +87,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 modulate = Color( 0.337255, 0.223529, 1, 1 )
-position = Vector2( 33.0418, -67.22 )
+position = Vector2( 33.0418, -75.5309 )
 shape = SubResource( 3 )
 
 [node name="StompDetector" type="Area2D" parent="."]
@@ -91,6 +99,6 @@ position = Vector2( 32.4944, -12.7029 )
 shape = SubResource( 4 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 69, -52 )
+position = Vector2( 64.1884, -51.5626 )
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]

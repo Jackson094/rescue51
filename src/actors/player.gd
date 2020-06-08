@@ -23,14 +23,14 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 		
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = 350
+		velocity.x = 320
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = false
 		if sign($Position2D.position.x) == -1:
 			$Position2D.position.x *= -1
 		
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -350
+		velocity.x = -320
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = true
 		if sign($Position2D.position.x) == 1:
@@ -41,7 +41,10 @@ func _physics_process(delta):
 		if on_floor == true:
 			$AnimatedSprite.play("idle")
 			
-	if Input.is_action_just_pressed("ui_focus_next"):
+	if Input.is_action_just_pressed("ui_focus_next") and not (Input.is_action_just_released("ui_right") or 
+			Input.is_action_just_released("ui_left") or Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") 
+			or Input.is_action_just_released("ui_up") or Input.is_action_pressed("ui_up")):
+		$AnimatedSprite.play("shooting")
 		var fireball = FIREBALL.instance()
 		if sign($Position2D.position.x) == 1:
 			fireball.set_bullet_direction(1)
@@ -53,7 +56,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			if on_floor == true:
-				velocity.y = -900
+				velocity.y = -878
 				on_floor = false
 				
 	if is_on_floor():
