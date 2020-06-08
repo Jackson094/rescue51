@@ -1006,6 +1006,7 @@ next_scene = ExtResource( 10 )
 position = Vector2( 200, 760 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+visible = false
 position = Vector2( -201, -760 )
 stream = ExtResource( 6 )
 autoplay = true
