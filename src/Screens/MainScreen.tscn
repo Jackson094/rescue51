@@ -52,7 +52,7 @@ __meta__ = {
 margin_right = 360.0
 margin_bottom = 73.0
 text = "Play"
-next_scene_path = "res://src/Levels/Level01.tscn"
+next_scene_path = "res://src/levels/Level01.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]
 margin_top = 81.0
