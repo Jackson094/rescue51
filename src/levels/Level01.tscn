@@ -969,7 +969,6 @@ __meta__ = {
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 
 [node name="UserInterface" parent="InterfaceLayer" instance=ExtResource( 2 )]
-visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 40 )
@@ -986,7 +985,7 @@ visible = false
 visible = false
 
 [node name="Portal2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5703.54, 594.019 )
+position = Vector2( 6368.17, 624.229 )
 next_scene = ExtResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
