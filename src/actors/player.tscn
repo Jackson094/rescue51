@@ -20,6 +20,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "shooting",
@@ -30,19 +35,14 @@ animations = [ {
 "name": "fall",
 "speed": 1.5
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "idle",
+"name": "run",
 "speed": 5.0
 } ]
 
@@ -100,6 +100,9 @@ position = Vector2( 32.4944, -12.7029 )
 shape = SubResource( 4 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 75.5612, -51.1252 )
+position = Vector2( 68.1251, -51.1252 )
+__meta__ = {
+"_gizmo_extents_": 2.0
+}
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]

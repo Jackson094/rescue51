@@ -3,8 +3,9 @@ extends KinematicBody2D
 export var stomp_impulse: = 200.0
 
 const FLOOR = Vector2(0,-1)
-const GRAVITY = 20
+var GRAVITY = 20
 const FIREBALL = preload("res://src/Objects/Fireball.tscn")
+const UP_SPEED = 50
 
 var velocity = Vector2()
 var on_floor = false
@@ -16,21 +17,24 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	die()
+	
+
 
 func _physics_process(delta):
+	
 	if Input.is_action_just_released("ui_up") and velocity.y < 0.0:
 		velocity.y = 0;
 	velocity.y += GRAVITY
 		
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = 320
+		velocity.x = 470
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = false
 		if sign($Position2D.position.x) == -1:
 			$Position2D.position.x *= -1
 		
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -320
+		velocity.x = -470
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = true
 		if sign($Position2D.position.x) == 1:
@@ -53,11 +57,11 @@ func _physics_process(delta):
 			fireball.set_bullet_direction(-1)
 		get_parent().add_child(fireball)
 		fireball.position = $Position2D.global_position
-	
+		
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			if on_floor == true:
-				velocity.y = -878
+				velocity.y = -800
 				on_floor = false
 				
 	if is_on_floor():
@@ -70,8 +74,7 @@ func _physics_process(delta):
 			$AnimatedSprite.play("fall")
 	
 	velocity = move_and_slide(velocity, FLOOR)
-
-
+	
 func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
 	var stomp_jump = 0.0
 	if Input.is_action_pressed("ui_up"):
@@ -80,7 +83,6 @@ func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) ->
 		stomp_jump = -stomp_impulse
 		
 	return Vector2(linear_velocity.x, stomp_jump)
-
 
 func die() -> void:
 	PlayerData.deaths += 1
