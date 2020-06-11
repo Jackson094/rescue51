@@ -399,10 +399,10 @@ points = PoolVector2Array( 280, 460, 0, 460, 0, 0, 280, 0 )
 19/shapes = [  ]
 19/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 127.605, 42.5778 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 1377.83, 50.3273 )
 
 [node name="Level02" type="Node2D"]
@@ -457,7 +457,7 @@ position = Vector2( -111.115, -299.673 )
 
 [node name="Camera2D" parent="Player" index="1"]
 position = Vector2( -121.816, -318.824 )
-limit_right = 14000
+limit_right = 14600
 limit_bottom = 3400
 
 [node name="CollisionShape2D" parent="Player" index="2"]
@@ -492,12 +492,12 @@ position = Vector2( 305.376, -64.5987 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="one way collision objects"]
 position = Vector2( 1711.02, 664.272 )
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="one way collision objects"]
 position = Vector2( 6541.88, 499.402 )
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 one_way_collision = true
 
 [editable path="Player"]
