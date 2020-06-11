@@ -47,8 +47,6 @@ func _physics_process(delta):
 			Input.is_action_pressed("ui_up")):
 		$AnimatedSprite.play("shooting")
 		var fireball = FIREBALL.instance()
-		var shoot = $ShootSound
-		shoot.play()
 		if sign($Position2D.position.x) == 1:
 			fireball.set_bullet_direction(1)
 		else:
@@ -61,8 +59,6 @@ func _physics_process(delta):
 			if on_floor == true:
 				velocity.y = -878
 				on_floor = false
-				var sound = $JumpSound
-				sound.play()
 				
 	if is_on_floor():
 		on_floor = true
