@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://assets/desert_BG.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -8,10 +8,8 @@
 [ext_resource path="res://assets/music/Illuminati Song Full The XFiles Theme (online-audio-converter.com)(1).wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/background/stackablebuilding.png" type="Texture" id=7]
 [ext_resource path="res://src/levels/DESERTOBJECTS.tres" type="TileSet" id=8]
-[ext_resource path="res://src/actors/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/levels/Level02.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/DESERT2.tres" type="TileSet" id=11]
-[ext_resource path="res://assets/enemy.png" type="Texture" id=12]
 [ext_resource path="res://src/actors/Enemy2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -952,45 +950,6 @@ points = PoolVector2Array( 136, 80, 0, 80, 0, 0, 136, 0 )
 } ]
 38/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 53.5486, 285.37 )
-
-[sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 95.0903, 164.163 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 103.4, 43.2791 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 69.4851, 93.2061 )
-
-[sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 205.818, 33.2271 )
-
-[sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 107.059, 23.5277 )
-
-[sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 62.6763, 26.8969 )
-
-[sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 169.885, 51.0004 )
-
-[sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 252.74, 252.634 )
-
-[sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 127.11, 109.001 )
-
-[sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 61.1565, 25.0003 )
-
-[sub_resource type="RectangleShape2D" id=52]
-extents = Vector2( 112.74, 25.8286 )
-
-[sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 215.72, 328.044 )
-
 [node name="Level01" type="Node2D"]
 position = Vector2( 1, 0 )
 __meta__ = {
@@ -1044,10 +1003,10 @@ tile_set = ExtResource( 8 )
 format = 1
 tile_data = PoolIntArray( 262193, 14, 0, 393340, 536870920, 0, 458781, 536870920, 0, 524351, 4, 0, 589928, 536870918, 0, 589930, 536870918, 0, 655405, 1, 0, 720897, 10, 0, 786441, 13, 0, 786448, 2, 0, 786494, 11, 0, 983153, 536870922, 0, 1048585, 11, 0, 1048678, 13, 0, 1114134, 5, 0, 1114135, 5, 0, 1114136, 5, 0, 1114137, 5, 0, 1114138, 5, 0, 1114139, 5, 0, 1114143, 6, 0, 1114144, 6, 0, 1114145, 5, 0, 1114146, 5, 0, 1114147, 5, 0, 1114148, 5, 0, 1114149, 5, 0, 1114150, 5, 0 )
 
-[node name="other" type="Node2D" parent="."]
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="other" instance=ExtResource( 9 )]
-visible = false
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 13 )]
+position = Vector2( 486.17, 570.267 )
 
 [node name="Portal2D2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 6333, 1101.97 )
@@ -1055,11 +1014,6 @@ next_scene = ExtResource( 10 )
 
 [node name="Sprite" parent="Portal2D2" index="0"]
 position = Vector2( 3820.03, -363.181 )
-
-[node name="stackablebuilding" type="Sprite" parent="Portal2D2/Sprite" index="0"]
-position = Vector2( 1210.78, -1052.76 )
-scale = Vector2( 4.77304, 5.641 )
-texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" parent="Portal2D2" index="1"]
 position = Vector2( -32.9785, -115.296 )
@@ -1074,130 +1028,5 @@ stream = ExtResource( 6 )
 volume_db = -14.122
 autoplay = true
 max_distance = 1991.0
-
-[node name="enemy" type="Sprite" parent="."]
-visible = false
-position = Vector2( 805.182, 654.672 )
-texture = ExtResource( 12 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 1921.92, 814.588 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 41 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 1303.91, 1063.49 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 42 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1040.16, 846.772 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 1112.99, 941.867 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource( 43 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( 941.867, 992.779 )
-shape = SubResource( 44 )
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2( 623.184, 884.228 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-shape = SubResource( 45 )
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
-position = Vector2( 1588.16, 731.149 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-shape = SubResource( 46 )
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="."]
-position = Vector2( 2151.02, 318.198 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-shape = SubResource( 47 )
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
-position = Vector2( 3812, 714.001 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
-shape = SubResource( 48 )
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="."]
-position = Vector2( 4200, 841.001 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
-shape = SubResource( 49 )
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="."]
-position = Vector2( 3582, 816.001 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
-shape = SubResource( 50 )
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="."]
-position = Vector2( 2564, 446 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
-shape = SubResource( 51 )
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="."]
-position = Vector2( 3895, 655.001 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
-shape = SubResource( 52 )
-
-[node name="StaticBody2D13" type="StaticBody2D" parent="."]
-position = Vector2( 8038.4, 763.676 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
-shape = SubResource( 53 )
 
 [editable path="Portal2D2"]

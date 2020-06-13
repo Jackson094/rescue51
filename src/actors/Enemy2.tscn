@@ -12,22 +12,21 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.2826, 26.3077 )
+extents = Vector2( 56.6765, 39.9694 )
 
 [node name="Enemy2" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 2, 1.5 )
-scale = Vector2( 0.62963, 0.602151 )
+position = Vector2( 1.99995, -1.20749 )
+scale = Vector2( 0.9806, 0.951504 )
 frames = SubResource( 1 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.41422, 2.12132 )
+position = Vector2( 1.41422, -1.48866 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]

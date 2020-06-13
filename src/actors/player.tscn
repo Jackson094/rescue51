@@ -32,11 +32,6 @@ animations = [ {
 "name": "shooting",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
@@ -46,6 +41,11 @@ animations = [ {
 "loop": true,
 "name": "fall",
 "speed": 1.5
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
