@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://assets/desert_BG.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/levels/Level02.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/DESERT2.tres" type="TileSet" id=11]
 [ext_resource path="res://assets/enemy.png" type="Texture" id=12]
+[ext_resource path="res://src/actors/Enemy2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0.261963, 128, 0.261963, 0.323761, 128, 0.323761 )
@@ -951,6 +952,18 @@ points = PoolVector2Array( 136, 80, 0, 80, 0, 0, 136, 0 )
 } ]
 38/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 53.5486, 285.37 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 86.98, 159.865 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 103.4, 43.2791 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 69.4851, 93.2061 )
+
 [node name="Level01" type="Node2D"]
 position = Vector2( 1, 0 )
 __meta__ = {
@@ -1039,5 +1052,41 @@ max_distance = 1991.0
 visible = false
 position = Vector2( 805.182, 654.672 )
 texture = ExtResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1921.92, 814.588 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 41 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1303.91, 1063.49 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 42 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1110.16, 852.772 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 1112.99, 941.867 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 43 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 941.867, 992.779 )
+shape = SubResource( 44 )
 
 [editable path="Portal2D2"]
