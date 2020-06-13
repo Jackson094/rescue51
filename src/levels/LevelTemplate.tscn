@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 
-
-
-
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.4008, 65.4708 )
 
 [node name="LevelTemplate" type="Node2D"]
 
@@ -23,7 +22,6 @@ expand = true
 stretch_mode = 2
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="UserInterface" parent="InterfaceLayer" instance=ExtResource( 2 )]
 
@@ -39,9 +37,17 @@ tile_data = PoolIntArray( 0, 0, 0, 23, 0, 0, 65536, 0, 0, 65559, 0, 0, 131072, 0
 position = Vector2( 885.108, 800 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1750, 800 )
-next_level_scene = "res://src/levels/Level02.tscn"
+position = Vector2( 1694.21, 781.756 )
 
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="kill_tiles" type="Node2D" parent="."]
+
+[node name="killTiles" type="StaticBody2D" parent="."]
+
+[node name="spike" type="CollisionShape2D" parent="killTiles"]
+position = Vector2( 296.285, 736.753 )
+shape = SubResource( 1 )
+[connection signal="input_event" from="killTiles" to="Player" method="_on_killTiles_input_event"]

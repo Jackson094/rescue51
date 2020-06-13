@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var stomp_impulse: = 200.0
 
 const FLOOR = Vector2(0,-1)
-var GRAVITY = 20
+var GRAVITY = 17
 const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 const UP_SPEED = 50
 
@@ -78,6 +78,12 @@ func _physics_process(delta):
 			$AnimatedSprite.play("fall")
 	
 	velocity = move_and_slide(velocity, FLOOR)
+
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == 'Danger':
+			print("I collided with object", collision.collider.name)
+			die()
 	
 func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
 	var stomp_jump = 0.0
@@ -91,3 +97,5 @@ func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) ->
 func die() -> void:
 	PlayerData.deaths += 1
 	queue_free()
+
+
