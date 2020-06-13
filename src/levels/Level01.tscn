@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://assets/desert_BG.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -8,10 +8,8 @@
 [ext_resource path="res://assets/music/Illuminati Song Full The XFiles Theme (online-audio-converter.com)(1).wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/background/stackablebuilding.png" type="Texture" id=7]
 [ext_resource path="res://src/levels/DESERTOBJECTS.tres" type="TileSet" id=8]
-[ext_resource path="res://src/actors/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/levels/Level02.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/DESERT2.tres" type="TileSet" id=11]
-[ext_resource path="res://assets/enemy.png" type="Texture" id=12]
 [ext_resource path="res://src/actors/Enemy2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -1017,10 +1015,10 @@ tile_set = ExtResource( 8 )
 format = 1
 tile_data = PoolIntArray( 262193, 14, 0, 393340, 536870920, 0, 458781, 536870920, 0, 524351, 4, 0, 589928, 536870918, 0, 589930, 536870918, 0, 655405, 1, 0, 720897, 10, 0, 786441, 13, 0, 786448, 2, 0, 786494, 11, 0, 983153, 536870922, 0, 1048585, 11, 0, 1048678, 13, 0, 1114134, 5, 0, 1114135, 5, 0, 1114136, 5, 0, 1114137, 5, 0, 1114138, 5, 0, 1114139, 5, 0, 1114143, 6, 0, 1114144, 6, 0, 1114145, 5, 0, 1114146, 5, 0, 1114147, 5, 0, 1114148, 5, 0, 1114149, 5, 0, 1114150, 5, 0 )
 
-[node name="other" type="Node2D" parent="."]
+[node name="enemies" type="Node2D" parent="."]
 
-[node name="Enemy" parent="other" instance=ExtResource( 9 )]
-visible = false
+[node name="Enemy2" parent="enemies" instance=ExtResource( 13 )]
+position = Vector2( 390.353, 638.266 )
 
 [node name="Portal2D2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 6333, 1101.97 )
@@ -1037,6 +1035,12 @@ texture = ExtResource( 7 )
 [node name="CollisionShape2D" parent="Portal2D2" index="1"]
 position = Vector2( -32.9785, -115.296 )
 
+[node name="ColorRect" parent="Portal2D2/TransitionLayer" index="0"]
+margin_left = -200.906
+margin_top = 1316.7
+margin_right = -200.906
+margin_bottom = 1316.7
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 120.609, 542.181 )
 
@@ -1048,45 +1052,45 @@ volume_db = -14.122
 autoplay = true
 max_distance = 1991.0
 
-[node name="enemy" type="Sprite" parent="."]
-visible = false
-position = Vector2( 805.182, 654.672 )
-texture = ExtResource( 12 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 1921.92, 814.588 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 shape = SubResource( 41 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 1303.91, 1063.49 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
 shape = SubResource( 42 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1110.16, 852.772 )
-
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 1112.99, 941.867 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+visible = false
 shape = SubResource( 43 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2( 941.867, 992.779 )
+visible = false
+position = Vector2( 833.687, 958.78 )
 shape = SubResource( 44 )
 
 [editable path="Portal2D2"]
