@@ -6,6 +6,7 @@ const FLOOR = Vector2(0,-1)
 var GRAVITY = 17
 const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 const UP_SPEED = 50
+var contact = false;
 
 var velocity = Vector2()
 var on_floor = false
@@ -16,7 +17,9 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 	velocity = calculate_stomp_velocity(velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
+	contact = true
 	die()
+
 	
 
 
@@ -95,7 +98,11 @@ func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) ->
 	return Vector2(linear_velocity.x, stomp_jump)
 
 func die() -> void:
-	PlayerData.deaths += 1
+
+	if contact == true:
+		PlayerData.captures +=1
+	else:
+		PlayerData.deaths += 1
 	queue_free()
 
 

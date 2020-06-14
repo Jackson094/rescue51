@@ -8,6 +8,7 @@ onready var title_label: Label = $PauseOverlay/Title
 onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButton
 
 const MESSAGE_DIED: = "You died"
+const MESSAGE_CAPTURED = "Captured"
 
 var paused: = false setget set_paused
 
@@ -15,16 +16,20 @@ var paused: = false setget set_paused
 func _ready() -> void:
 	PlayerData.connect("updated", self, "update_interface")
 	PlayerData.connect("died", self, "_on_Player_died")
+	PlayerData.connect("player_captured", self, "_on_Player_captured")
 
-
+func _on_Player_captured() -> void:
+	self.paused = true
+	title_label.text = MESSAGE_CAPTURED
 
 func _on_Player_died() -> void:
 	self.paused = true
+
 	title_label.text = MESSAGE_DIED
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause") and title_label.text != MESSAGE_DIED:
+	if event.is_action_pressed("pause") and title_label.text != MESSAGE_CAPTURED:
 		self.paused = not self.paused
 
 
