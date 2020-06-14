@@ -2,12 +2,13 @@ extends Node
 
 
 onready var scene_tree: SceneTree = get_tree()
-onready var score_label: Label = $Score
+#onready var score_label: Label = $Score
 onready var pause_overlay: ColorRect = $PauseOverlay
 onready var title_label: Label = $PauseOverlay/Title
 onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButton
 
 const MESSAGE_DIED: = "You died"
+const MESSAGE_CAPTURED: = "You were taken"
 
 var paused: = false setget set_paused
 
@@ -15,12 +16,17 @@ var paused: = false setget set_paused
 func _ready() -> void:
 	PlayerData.connect("updated", self, "update_interface")
 	PlayerData.connect("died", self, "_on_Player_died")
+	PlayerData.connect("captured", self, "_on_Player_died")
 
 
 
 func _on_Player_died() -> void:
 	self.paused = true
 	title_label.text = MESSAGE_DIED
+
+func _on_Player_captured() -> void:
+	self.paused = true
+	title_label.text = MESSAGE_CAPTURED
 
 
 func _unhandled_input(event: InputEvent) -> void:

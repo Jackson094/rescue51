@@ -16,7 +16,7 @@ func _on_StompDetector_area_entered(area: Area2D) -> void:
 	velocity = calculate_stomp_velocity(velocity, stomp_impulse)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
-	die()
+	capture()
 	
 
 
@@ -83,7 +83,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.collider.name == 'Danger':
 			print("I collided with object", collision.collider.name)
-			die()
+			#diedie()
 	
 func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
 	var stomp_jump = 0.0
@@ -96,6 +96,18 @@ func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) ->
 
 func die() -> void:
 	PlayerData.deaths += 1
-	queue_free()
+	#queue_free()
+	
+func capture() -> void:
+	PlayerData.deaths += 1
+	#queue_free()
+	_on_Player_captured()
 
 
+
+
+
+
+
+func _on_Player_captured():
+	print ("captured")
