@@ -1003,6 +1003,11 @@ tile_set = ExtResource( 8 )
 format = 1
 tile_data = PoolIntArray( 262193, 14, 0, 393340, 536870920, 0, 458781, 536870920, 0, 524351, 4, 0, 589928, 536870918, 0, 589930, 536870918, 0, 655405, 1, 0, 720897, 10, 0, 786441, 13, 0, 786448, 2, 0, 786494, 11, 0, 983153, 536870922, 0, 1048585, 11, 0, 1048678, 13, 0, 1114134, 5, 0, 1114135, 5, 0, 1114136, 5, 0, 1114137, 5, 0, 1114138, 5, 0, 1114139, 5, 0, 1114143, 6, 0, 1114144, 6, 0, 1114145, 5, 0, 1114146, 5, 0, 1114147, 5, 0, 1114148, 5, 0, 1114149, 5, 0, 1114150, 5, 0 )
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 13 )]
+position = Vector2( 486.17, 570.267 )
+
 [node name="Portal2D2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 6333, 1101.97 )
 next_scene = ExtResource( 10 )
@@ -1012,12 +1017,6 @@ position = Vector2( 3820.03, -363.181 )
 
 [node name="CollisionShape2D" parent="Portal2D2" index="1"]
 position = Vector2( -32.9785, -115.296 )
-
-[node name="ColorRect" parent="Portal2D2/TransitionLayer" index="0"]
-margin_left = -19.9724
-margin_top = -7.98901
-margin_right = -19.9724
-margin_bottom = -7.98901
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 120.609, 542.181 )
@@ -1029,13 +1028,5 @@ stream = ExtResource( 6 )
 volume_db = -14.122
 autoplay = true
 max_distance = 1991.0
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 13 )]
-position = Vector2( 438.236, 642.168 )
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 13 )]
-position = Vector2( 665.922, 686.108 )
 
 [editable path="Portal2D2"]

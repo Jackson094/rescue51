@@ -58,4 +58,3 @@ next_scene_path = "res://src/levels/Level01.tscn"
 margin_top = 81.0
 margin_right = 360.0
 margin_bottom = 154.0
-script = null
