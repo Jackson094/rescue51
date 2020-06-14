@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/BlueAlien/BlueAlienJump/blue__0030_jump_4.png" type="Texture" id=2]
@@ -27,46 +27,42 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "shooting",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
+"name": "jump",
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "fall",
 "speed": 1.5
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "jump",
-"speed": 1.0
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "shooting",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 64.2971 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 27.5008, 56.3426 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 21.8204, 10.7155 )
+extents = Vector2( 27.5008, 65.0583 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 4
 script = ExtResource( 1 )
-stomp_impulse = 400.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 32, -64 )
 scale = Vector2( 0.275048, 0.285872 )
 frames = SubResource( 1 )
-animation = "shooting"
+animation = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -93,16 +89,8 @@ modulate = Color( 0.337255, 0.223529, 1, 1 )
 position = Vector2( 31.5716, -67.4449 )
 shape = SubResource( 3 )
 
-[node name="StompDetector" type="Area2D" parent="."]
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-modulate = Color( 0.337255, 0.223529, 1, 1 )
-position = Vector2( 32.4944, -12.7029 )
-shape = SubResource( 4 )
-
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 75.5612, -51.1252 )
+position = Vector2( 63.5479, -51.1252 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
@@ -112,4 +100,3 @@ volume_db = -15.0
 stream = ExtResource( 19 )
 volume_db = -12.0
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
-[connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]
