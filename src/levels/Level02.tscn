@@ -3,12 +3,12 @@
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/dangerobjects.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/background/f715f617e3224fb92ab30a771ff8c07d.jpg" type="Texture" id=3]
-[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Actors/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/Level03.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/levels/labtiles.tres" type="TileSet" id=7]
 [ext_resource path="res://src/levels/realdangertileslab.tres" type="TileSet" id=8]
-[ext_resource path="res://assets/music/Carosone_-_Peace_and_Agitation.wav" type="AudioStream" id=16]
+[ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.653, 56.7197 )
@@ -68,47 +68,6 @@ tile_data = PoolIntArray( 65641, 0, 0, 65648, 0, 0, 65657, 0, 0, 65663, 0, 0, 19
 position = Vector2( 13720, 2160 )
 next_scene = ExtResource( 5 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 180, 480 )
-
-[node name="AnimatedSprite" parent="Player" index="0"]
-position = Vector2( -111.115, -299.673 )
-
-[node name="Camera2D" parent="Player" index="1"]
-position = Vector2( -121.816, -318.824 )
-limit_right = 14600
-limit_bottom = 3400
-
-[node name="CollisionShape2D" parent="Player" index="2"]
-visible = false
-position = Vector2( -112.201, -293.242 )
-
-[node name="EnemyDetector" parent="Player" index="3"]
-visible = false
-position = Vector2( -108.517, -275.422 )
-
-[node name="CollisionShape2D" parent="Player/EnemyDetector" index="0"]
-visible = false
-position = Vector2( 24.2305, -24.4196 )
-one_way_collision = true
-
-[node name="StompDetector" parent="Player" index="4"]
-visible = false
-position = Vector2( -116.102, -317.343 )
-
-[node name="CollisionShape2D" parent="Player/StompDetector" index="0"]
-position = Vector2( 332.199, -359.547 )
-
-[node name="Position2D" parent="Player" index="5"]
-position = Vector2( -76, -288 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource( 16 )
-volume_db = -18.647
-pitch_scale = 0.97
-autoplay = true
-max_distance = 1991.0
-
 [node name="one way collision objects" type="StaticBody2D" parent="."]
 position = Vector2( 305.376, -64.5987 )
 
@@ -123,5 +82,24 @@ shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="enemies" type="Node2D" parent="."]
+
+[node name="Enemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1016, 856 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11336, 1688 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6208, 296 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 24, 248 )
+
+[node name="AnimatedSprite" parent="Player" index="0"]
+animation = "idle"
+frame = 0
+
+[node name="Position2D" parent="Player" index="4"]
+position = Vector2( 64, -56 )
 
 [editable path="Player"]
