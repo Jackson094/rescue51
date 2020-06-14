@@ -1005,9 +1005,6 @@ tile_data = PoolIntArray( 262193, 14, 0, 393340, 536870920, 0, 458781, 536870920
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 13 )]
-position = Vector2( 486.17, 570.267 )
-
 [node name="Portal2D2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 6333, 1101.97 )
 next_scene = ExtResource( 10 )
@@ -1028,5 +1025,8 @@ stream = ExtResource( 6 )
 volume_db = -14.122
 autoplay = true
 max_distance = 1991.0
+
+[node name="Enemy2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1185.77, 841.877 )
 
 [editable path="Portal2D2"]

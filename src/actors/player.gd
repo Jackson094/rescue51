@@ -13,15 +13,9 @@ var on_floor = false
 
 var speed = Vector2(50, 100)
 
-func _on_StompDetector_area_entered(area: Area2D) -> void:
-	velocity = calculate_stomp_velocity(velocity, stomp_impulse)
-
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	contact = true
 	die()
-
-	
-
 
 func _physics_process(delta):
 	
@@ -78,6 +72,7 @@ func _physics_process(delta):
 		if velocity.y < 0:
 			$AnimatedSprite.play("jump")
 		else:
+			velocity.y = 600
 			$AnimatedSprite.play("fall")
 	
 	velocity = move_and_slide(velocity, FLOOR)
@@ -87,15 +82,6 @@ func _physics_process(delta):
 		if collision.collider.name == 'Danger':
 			print("I collided with object", collision.collider.name)
 			die()
-	
-func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
-	var stomp_jump = 0.0
-	if Input.is_action_pressed("ui_up"):
-		stomp_jump = -speed.y 
-	else: 
-		stomp_jump = -stomp_impulse
-		
-	return Vector2(linear_velocity.x, stomp_jump)
 
 func die() -> void:
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/dangerobjects.tres" type="TileSet" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/levels/labtiles.tres" type="TileSet" id=7]
 [ext_resource path="res://src/levels/realdangertileslab.tres" type="TileSet" id=8]
-[ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/actors/Enemy2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/music/Carosone_-_Peace_and_Agitation.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.653, 56.7197 )
@@ -26,7 +27,8 @@ layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.993
+margin_bottom = 15.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 7
@@ -65,7 +67,7 @@ format = 1
 tile_data = PoolIntArray( 65641, 0, 0, 65648, 0, 0, 65657, 0, 0, 65663, 0, 0, 196653, 52, 0, 196661, 52, 0, 327767, 3, 0, 327769, 3, 0, 327771, 3, 0, 327773, 3, 0, 327775, 3, 0, 327777, 3, 0, 327779, 3, 0, 327781, 3, 0, 327783, 3, 0, 327785, 3, 0, 327787, 3, 0, 327789, 3, 0, 327791, 3, 0, 327793, 3, 0, 327795, 3, 0, 327797, 3, 0, 327799, 3, 0, 327801, 3, 0, 327803, 3, 0, 327805, 3, 0, 327807, 3, 0, 393253, 52, 0, 393276, 52, 0, 458755, 46, 0, 589906, 0, 0, 589909, 0, 0, 589912, 0, 0, 589915, 0, 0, 589918, 0, 0, 589921, 0, 0, 589924, 0, 0, 589927, 0, 0, 589930, 0, 0, 589933, 0, 0, 589936, 0, 0, 589939, 0, 0, 589942, 0, 0, 589945, 0, 0, 589948, 0, 0, 589951, 0, 0, 655390, 52, 0, 720904, 46, 0, 983054, 32, 0, 983058, 32, 0, 983062, 32, 0, 983066, 29, 0, 983070, 29, 0, 983074, 29, 0, 983102, 29, 0, 983106, 29, 0, 983110, 29, 0, 983114, 29, 0, 983118, 29, 0, 983226, 0, 0, 1245348, 4, 0, 1245370, 0, 0, 1507488, 4, 0, 1507492, 4, 0, 1507496, 4, 0, 1507514, 0, 0, 2556037, 0, 0, 2686980, 3, 0, 2818178, 0, 0, 2818181, 0, 0, 2818184, 0, 0, 2818269, 2, 0, 2818272, 0, 0 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 13720, 2160 )
+position = Vector2( 13784, 2128 )
 next_scene = ExtResource( 5 )
 
 [node name="one way collision objects" type="StaticBody2D" parent="."]
@@ -81,25 +83,31 @@ position = Vector2( 6541.88, 499.402 )
 shape = SubResource( 2 )
 one_way_collision = true
 
-[node name="enemies" type="Node2D" parent="."]
-
-[node name="Enemy2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1016, 856 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 11336, 1688 )
-
-[node name="Enemy4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 6208, 296 )
-
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 24, 248 )
 
-[node name="AnimatedSprite" parent="Player" index="0"]
-animation = "idle"
-frame = 0
+[node name="Camera2D" parent="Player" index="1"]
+limit_bottom = 2000
 
 [node name="Position2D" parent="Player" index="4"]
 position = Vector2( 64, -56 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2( -0.687973, 0 )
+stream = ExtResource( 10 )
+volume_db = -22.667
+autoplay = true
+
+[node name="Enemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1312, 816 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5992, 328 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6232, 320 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11288, 1672 )
 
 [editable path="Player"]

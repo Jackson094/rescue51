@@ -8,7 +8,7 @@ const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 
 var velocity = Vector2()
 
-var react_time = 200
+var react_time = 400
 var next_direction = 0
 var next_direction_time = 0
 var target_player_dist = 150
@@ -57,65 +57,57 @@ func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 290
+		velocity.x = next_direction * 320
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
-		var fireball = FIREBALL.instance()
-		if sign($Position2D.position.x) == 1:
-			fireball.set_bullet_direction(1)
-		else:
-			fireball.set_bullet_direction(-1)
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D.global_position
+#		var fireball = FIREBALL.instance()
+#		if sign($Position2D.position.x) == 1:
+#			fireball.set_bullet_direction(1)
+#		else:
+#			fireball.set_bullet_direction(-1)
+#		get_parent().add_child(fireball)
+#		fireball.position = $Position2D.global_position
 	elif Player.position.x > position.x + target_player_dist and sees_player():
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 320
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
-		var fireball = FIREBALL.instance()
-		if sign($Position2D.position.x) == 1:
-			fireball.set_bullet_direction(1)
-		else:
-			fireball.set_bullet_direction(-1)
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D.global_position
+#		var fireball = FIREBALL.instance()
+#		if sign($Position2D.position.x) == 1:
+#			fireball.set_bullet_direction(1)
+#		else:
+#			fireball.set_bullet_direction(-1)
+#		get_parent().add_child(fireball)
+#		fireball.position = $Position2D.global_position
 	elif Player.position.x == position.x:
 		next_direction = 0
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 320
 		$AnimatedSprite.play("idle")
-	elif Player.position.x == position.x and sees_player():
-		next_direction = 0
-		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 320
-		var fireball = FIREBALL.instance()
-		if sign($Position2D.position.x) == 1:
-			fireball.set_bullet_direction(1)
-		else:
-			fireball.set_bullet_direction(-1)
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D.global_position
 	
 
 	if OS.get_ticks_msec() > next_jump_time and next_jump_time != -1 and is_on_floor():
 		if Player.position.y < position.y - 64 and sees_player():
-			velocity.y = -420
+			velocity.y = -600
 		next_jump_time = -1
 
 	if Player.position.y < position.y - 64 and next_jump_time == -1 and sees_player():
 		next_jump_time = OS.get_ticks_msec() + react_time
 
 	if is_on_floor() and velocity.y > 0:
-		velocity.y =  0
+		velocity.y = 0
+	
+	if not is_on_floor() and velocity.y > 0:
+		velocity.y = 550
 	
 	if is_dead == false:
-		$AnimatedSprite.play("idle")
+		#$AnimatedSprite.play("idle")
 		velocity.y += GRAVITY
 		velocity = move_and_slide(velocity,FLOOR)
 	
-#	if is_on_wall():
-#		direction = direction * -1
+	if is_on_wall():
+		dir = dir * -1
 
 
 func _on_Timer_timeout():
