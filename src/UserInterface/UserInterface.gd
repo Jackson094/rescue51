@@ -6,7 +6,7 @@ onready var score_label: Label = $Score
 onready var pause_overlay: ColorRect = $PauseOverlay
 onready var title_label: Label = $PauseOverlay/Title
 onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButton
-onready var background_image: TextureRect = $CanvasLayer/Bimage
+onready var background_image: TextureRect = $PauseOverlay/CanvasLayer/Bimage
 
 
 const MESSAGE_DIED: = "You died"
@@ -23,7 +23,8 @@ func _ready() -> void:
 func _on_Player_captured() -> void:
 	self.paused = true
 	title_label.text = MESSAGE_CAPTURED
-	#background_image.visible = not background_image.visible 
+	background_image.visible = true
+	#$Bimage.show()
 	
 	#background_image.load(root/assets/background/autopsy.jpg)
 
@@ -45,3 +46,4 @@ func set_paused(value: bool) -> void:
 	paused = value
 	scene_tree.paused = value
 	pause_overlay.visible = value
+	#background_image.visible = value
