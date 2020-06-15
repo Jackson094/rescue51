@@ -91,3 +91,6 @@ func die() -> void:
 		PlayerData.deaths += 1
 	queue_free()
 
+func dead():
+	velocity = Vector2(0,0)
+	PlayerData.deaths += 1
