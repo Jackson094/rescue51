@@ -18,6 +18,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Bimage" type="TextureRect" parent="."]
+visible = false
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 1918.0
+margin_bottom = 1052.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PauseOverlay" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -35,18 +47,6 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PauseOverlay"]
-
-[node name="Bimage" type="TextureRect" parent="PauseOverlay/CanvasLayer"]
-visible = false
-margin_left = 2.0
-margin_top = 3.0
-margin_right = 1901.0
-margin_bottom = 1075.0
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title" parent="PauseOverlay" instance=ExtResource( 3 )]
 margin_top = 150.0
