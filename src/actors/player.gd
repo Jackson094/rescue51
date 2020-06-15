@@ -6,7 +6,7 @@ const FLOOR = Vector2(0,-1)
 var GRAVITY = 17
 const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 const UP_SPEED = 50
-var contact = false;
+var contact = false
 
 var velocity = Vector2()
 var on_floor = false
@@ -37,7 +37,7 @@ func _physics_process(delta):
 		if sign($Position2D.position.x) == 1:
 			$Position2D.position.x *= -1
 		
-	else:
+	else:	
 		velocity.x = 0
 		if on_floor == true:
 			$AnimatedSprite.play("idle")
@@ -72,7 +72,7 @@ func _physics_process(delta):
 		if velocity.y < 0:
 			$AnimatedSprite.play("jump")
 		else:
-			velocity.y = 600
+			velocity.y = 500
 			$AnimatedSprite.play("fall")
 	
 	velocity = move_and_slide(velocity, FLOOR)
@@ -86,9 +86,8 @@ func _physics_process(delta):
 func die() -> void:
 
 	if contact == true:
-		PlayerData.captures +=1
+		PlayerData.captures += 1
 	else:
 		PlayerData.deaths += 1
 	queue_free()
-
 
