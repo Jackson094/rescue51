@@ -23,7 +23,7 @@ func _ready() -> void:
 func _on_Player_captured() -> void:
 	self.paused = true
 	title_label.text = MESSAGE_CAPTURED
-	background_image.visible = not background_image.visible 
+	#background_image.visible = not background_image.visible 
 	
 	#background_image.load(root/assets/background/autopsy.jpg)
 
