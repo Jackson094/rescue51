@@ -4,14 +4,12 @@ const GRAVITY = 9.81
 const SPEED = 100
 const FLOOR = Vector2(0,-1)
 
-const FIREBALL = preload("res://src/Objects/Fireball.tscn")
-
 var velocity = Vector2()
 
 var react_time = 400
 var next_direction = 0
 var next_direction_time = 0
-var target_player_dist = 200
+var target_player_dist = 150
 var target_player_shoot = 90
 var dir = 0
 var next_jump_time = -1
@@ -66,15 +64,7 @@ func _process(delta):
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 320
 		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("shooting")
-		var fireball = FIREBALL.instance()
-		if sign($Position2D2.position.x) == 1:
-			fireball.set_bullet_direction(1)
-			#$Position2D.position.x *= -1
-		else:
-			fireball.set_bullet_direction(-1)
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D2.global_position
+		$AnimatedSprite.play("jumping")
 	elif Player.position.x > position.x + target_player_dist and sees_player():
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time
@@ -86,15 +76,7 @@ func _process(delta):
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 320
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("shooting")
-		var fireball = FIREBALL.instance()
-		if sign($Position2D.position.x) == 1:
-			fireball.set_bullet_direction(1)
-		else:
-			fireball.set_bullet_direction(-1)
-			#$Position2D.position.x *= -1
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D.global_position
+		$AnimatedSprite.play("jumping")
 	elif Player.position.x == position.x:
 		next_direction = 0
 		next_direction_time = OS.get_ticks_msec() + react_time
@@ -105,6 +87,7 @@ func _process(delta):
 	if OS.get_ticks_msec() > next_jump_time and next_jump_time != -1 and is_on_floor():
 		if Player.position.y < position.y - 64 and sees_player():
 			velocity.y = -600
+			$AnimatedSprite.play("jumping")
 		next_jump_time = -1
 
 	if Player.position.y < position.y - 64 and next_jump_time == -1 and sees_player():
@@ -115,6 +98,7 @@ func _process(delta):
 	
 	if not is_on_floor() and velocity.y > 0:
 		velocity.y = 550
+		$AnimatedSprite.play("jumping")
 	
 	if is_dead == false:
 		#$AnimatedSprite.play("idle")

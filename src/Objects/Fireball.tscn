@@ -15,6 +15,7 @@ animations = [ {
 extents = Vector2( 5, 5 )
 
 [node name="Fireball" type="Area2D"]
+collision_layer = 4
 collision_mask = 0
 script = ExtResource( 2 )
 

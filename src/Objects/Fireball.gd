@@ -1,13 +1,11 @@
 extends Area2D
 
-const SPEED = 500
+const SPEED = 700
 var velocity = Vector2()
 var direction =1
 
-
 func _ready():
 	pass 
-	
 	
 func set_bullet_direction(dir):
 	direction = dir
@@ -20,12 +18,9 @@ func _physics_process(delta):
 	$AnimatedSprite.play("shoot")
 
 
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-
-
-
 func _on_Fireball_body_entered(body):
 	if "Enemy" in body.name:
 		body.dead()
+	if "Player" in body.name:
+		body.die()
 	queue_free()
