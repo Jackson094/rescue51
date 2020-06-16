@@ -22,11 +22,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "shooting",
@@ -46,6 +41,11 @@ animations = [ {
 "loop": true,
 "name": "fall",
 "speed": 1.5
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -90,7 +90,7 @@ position = Vector2( 31.5716, -67.4449 )
 shape = SubResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 63.5479, -51.1252 )
+position = Vector2( 64, -48 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
