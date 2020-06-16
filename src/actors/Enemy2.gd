@@ -67,14 +67,7 @@ func _process(delta):
 		velocity.x = next_direction * 320
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("shooting")
-		var fireball = FIREBALL.instance()
-		if sign($Position2D2.position.x) == 1:
-			fireball.set_bullet_direction(1)
-			#$Position2D.position.x *= -1
-		else:
-			fireball.set_bullet_direction(-1)
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D2.global_position
+		
 	elif Player.position.x > position.x + target_player_dist and sees_player():
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time
@@ -87,14 +80,14 @@ func _process(delta):
 		velocity.x = next_direction * 320
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("shooting")
-		var fireball = FIREBALL.instance()
-		if sign($Position2D.position.x) == 1:
-			fireball.set_bullet_direction(1)
-		else:
-			fireball.set_bullet_direction(-1)
-			#$Position2D.position.x *= -1
-		get_parent().add_child(fireball)
-		fireball.position = $Position2D.global_position
+#		var fireball = FIREBALL.instance()
+#		if sign($Position2D.position.x) == 1:
+#			fireball.set_bullet_direction(1)
+#		else:
+#			fireball.set_bullet_direction(-1)
+#			#$Position2D.position.x *= -1
+#		get_parent().add_child(fireball)
+#		fireball.position = $Position2D.global_position
 	elif Player.position.x == position.x:
 		next_direction = 0
 		next_direction_time = OS.get_ticks_msec() + react_time
@@ -127,3 +120,14 @@ func _process(delta):
 func _on_Timer_timeout():
 	queue_free()
 
+
+
+func _on_Timer2_timeout():
+	var fireball = FIREBALL.instance()
+	if sign(next_direction) == 1:
+		fireball.set_bullet_direction(1)
+			#$Position2D.position.x *= -1
+	else:
+		fireball.set_bullet_direction(-1)
+	get_parent().add_child(fireball)
+	fireball.position = $Position2D2.global_position

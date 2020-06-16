@@ -22,15 +22,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "shooting",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "shooting",
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 18 ) ],
 "loop": true,
@@ -70,4 +70,9 @@ __meta__ = {
 
 [node name="Position2D2" type="Position2D" parent="."]
 position = Vector2( -54.6127, -7.80182 )
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
