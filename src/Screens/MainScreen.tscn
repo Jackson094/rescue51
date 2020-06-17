@@ -6,11 +6,11 @@
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 47
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 47
 font_data = ExtResource( 6 )
 
@@ -62,7 +62,7 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 360.0
 margin_bottom = 73.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]
 anchor_left = 0.0
@@ -73,6 +73,4 @@ margin_left = 0.0
 margin_top = 81.0
 margin_right = 360.0
 margin_bottom = 154.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.00784314, 0.0196078, 0.772549, 1 )
-custom_colors/font_color_pressed = Color( 0.12549, 1, 0, 1 )
+custom_fonts/font = SubResource( 2 )

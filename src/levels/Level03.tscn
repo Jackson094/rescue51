@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=5]
@@ -46,66 +45,6 @@ visible = false
 position = Vector2( 4060, 80 )
 next_scene = ExtResource( 5 )
 
-[node name="Coins" type="Node2D" parent="."]
-visible = false
-
-[node name="Coin" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 1250, 570 )
-
-[node name="Coin2" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 1250, 800 )
-
-[node name="Coin3" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 1250, 680 )
-
-[node name="Coin4" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 1680, 280 )
-
-[node name="Coin5" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 2270, 180 )
-
-[node name="Coin6" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 2660, 170 )
-
-[node name="Coin7" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 3050, 160 )
-
-[node name="Coin8" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 3440, 740 )
-
-[node name="Coin9" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 3680, 740 )
-
-[node name="Coin10" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 4210, 740 )
-
-[node name="Coin11" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 4210, 540 )
-
-[node name="Coin12" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 4480, 460 )
-
-[node name="Coin13" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 5550, 630 )
-
-[node name="Coin14" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 5350, 630 )
-
-[node name="Coin15" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 5150, 380 )
-
-[node name="Coin16" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 4920, 380 )
-
-[node name="Coin17" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 5550, 140 )
-
-[node name="Coin18" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 5340, 140 )
-
-[node name="Coin19" parent="Coins" instance=ExtResource( 2 )]
-position = Vector2( 3330, -50 )
-
 [node name="Enemies" type="Node2D" parent="."]
 visible = false
 
@@ -128,14 +67,17 @@ position = Vector2( 5810, 960 )
 position = Vector2( 5120, 960 )
 
 [node name="RobotEnemy" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 2460.29, 474.325 )
 collision_mask = 4
 
 [node name="RobotEnemy2" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 1539.76, 489.252 )
 collision_mask = 4
 
 [node name="RobotEnemy3" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 2012.47, 494.228 )
 collision_layer = 4
 collision_mask = 4

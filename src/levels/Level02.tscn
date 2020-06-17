@@ -99,99 +99,12 @@ volume_db = -22.667
 autoplay = true
 
 [node name="Enemy2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1312, 816 )
+position = Vector2( 1695.92, 624.041 )
 
 [node name="Enemy21" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2800, 2560 )
 
 [node name="Enemy22" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2592, 2584 )
-
-[node name="Enemy23" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2008, 520 )
-
-[node name="Enemy24" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1080, 760 )
-
-[node name="Enemy25" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2456, 264 )
-
-[node name="Enemy26" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3008, 40 )
-
-[node name="Enemy27" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3432, 8 )
-
-[node name="Enemy28" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3912, 200 )
-
-[node name="Enemy29" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4376, 416 )
-
-[node name="Enemy30" parent="." instance=ExtResource( 9 )]
-position = Vector2( 12304, 2680 )
-
-[node name="Enemy31" parent="." instance=ExtResource( 9 )]
-position = Vector2( 12776, 2464 )
-
-[node name="Enemy32" parent="." instance=ExtResource( 9 )]
-position = Vector2( 13568, 2080 )
-
-[node name="Enemy33" parent="." instance=ExtResource( 9 )]
-position = Vector2( 13736, 2392 )
-
-[node name="Enemy34" parent="." instance=ExtResource( 9 )]
-position = Vector2( 14328, 2704 )
-
-[node name="Enemy35" parent="." instance=ExtResource( 9 )]
-position = Vector2( 13384, 2408 )
-
-[node name="Enemy36" parent="." instance=ExtResource( 9 )]
-position = Vector2( 10584, 2928 )
-
-[node name="Enemy37" parent="." instance=ExtResource( 9 )]
-position = Vector2( 10224, 2928 )
-
-[node name="Enemy38" parent="." instance=ExtResource( 9 )]
-position = Vector2( 11512, 2960 )
-
-[node name="Enemy39" parent="." instance=ExtResource( 9 )]
-position = Vector2( 11144, 2920 )
-
-[node name="Enemy40" parent="." instance=ExtResource( 9 )]
-position = Vector2( 7328, 2528 )
-
-[node name="Enemy41" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4632, 1672 )
-
-[node name="Enemy42" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4912, 1672 )
-
-[node name="Enemy43" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8592, 1712 )
-
-[node name="Enemy44" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8416, 1712 )
-
-[node name="Enemy45" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8064, 1720 )
-
-[node name="Enemy46" parent="." instance=ExtResource( 9 )]
-position = Vector2( 7904, 1728 )
-
-[node name="Enemy47" parent="." instance=ExtResource( 9 )]
-position = Vector2( 8752, 56 )
-
-[node name="Enemy48" parent="." instance=ExtResource( 9 )]
-position = Vector2( 9080, 1344 )
-
-[node name="Enemy49" parent="." instance=ExtResource( 9 )]
-position = Vector2( 9544, 1032 )
-
-[node name="Enemy50" parent="." instance=ExtResource( 9 )]
-position = Vector2( 9416, 320 )
-
-[node name="Enemy51" parent="." instance=ExtResource( 9 )]
-position = Vector2( 10056, 648 )
 
 [editable path="Player"]

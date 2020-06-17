@@ -28,9 +28,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Fireball_body_entered(body):
 	if "Enemy" in body.name:
 		body.dead()
-#		queue_free()
+		queue_free()
 #	if "Player" in body.name:
 #		body.dead()
-	queue_free()
+		#queue_free()
 		 
 		

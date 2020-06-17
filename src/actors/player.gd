@@ -15,7 +15,7 @@ var speed = Vector2(50, 100)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	contact = true
-	die()
+	#die()
 
 func _physics_process(delta):
 	

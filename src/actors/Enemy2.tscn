@@ -27,15 +27,15 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "shooting",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "running",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "shooting",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -48,7 +48,7 @@ collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -16.1498, 120.779 )
+position = Vector2( -17.5817, 116.483 )
 scale = Vector2( 6.2794, 6.73072 )
 frames = SubResource( 1 )
 animation = "idle"
@@ -63,13 +63,13 @@ wait_time = 0.005
 one_shot = true
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 52.0952, -9.31325 )
+position = Vector2( -92.5343, 163.956 )
 __meta__ = {
 "_gizmo_extents_": 2.0
 }
 
 [node name="Position2D2" type="Position2D" parent="."]
-position = Vector2( -54.6127, -7.80182 )
+position = Vector2( -96.14, 165.467 )
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 3.0

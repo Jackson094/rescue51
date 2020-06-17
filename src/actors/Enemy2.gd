@@ -19,6 +19,7 @@ var next_jump_time = -1
 
 var eye_reach = 80
 var vision = 512
+var seen = false
 
 var is_dead = false
 
@@ -68,8 +69,8 @@ func _process(delta):
 		velocity.x = next_direction * 320
 #		$Timer2.start()
 		$AnimatedSprite.flip_h = true
-		$Timer2.start()
-		
+		#$Timer2.start()
+		seen = true
 #		$AnimatedSprite.play("shooting")
 		
 	elif Player.position.x > position.x + target_player_dist and sees_player():
@@ -85,7 +86,8 @@ func _process(delta):
 		velocity.x = next_direction * 320
 #		$Timer2.start()
 		$AnimatedSprite.flip_h = false
-		$Timer2.start()
+		#$Timer2.start()
+		seen = true
 #		$AnimatedSprite.play("shooting")
 #		var fireball = FIREBALL.instance()
 #		if sign($Position2D.position.x) == 1:
@@ -101,6 +103,16 @@ func _process(delta):
 		velocity.x = next_direction * 320
 		$AnimatedSprite.play("idle")
 	
+	if seen == true:
+		$Timer2.start()
+#		var fireball = FIREBALL.instance()
+#		if sign(next_direction) == 1:
+#			fireball.set_bullet_direction(1)
+#	#		$Position2D.position.x *= -1
+#		else:
+#			fireball.set_bullet_direction(-1)
+#		get_parent().add_child(fireball)
+#		fireball.position = $Position2D2.global_position
 
 	if OS.get_ticks_msec() > next_jump_time and next_jump_time != -1 and is_on_floor():
 		if Player.position.y < position.y - 64 and sees_player():
@@ -123,6 +135,8 @@ func _process(delta):
 	
 	if is_on_wall():
 		dir = dir * -1
+		
+	
 
 func _on_Timer_timeout():
 	queue_free()
