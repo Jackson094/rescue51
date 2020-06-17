@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/background/autopsy.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/background/41yTSfucaoL._SX355_.jpg" type="Texture" id=8]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -25,6 +26,18 @@ margin_top = 3.0
 margin_right = 1918.0
 margin_bottom = 1052.0
 texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bimage2" type="TextureRect" parent="."]
+visible = false
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 1918.0
+margin_bottom = 1052.0
+texture = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
