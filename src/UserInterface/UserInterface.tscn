@@ -77,16 +77,24 @@ margin_right = 135.0
 margin_bottom = 135.0
 
 [node name="RetryButton2" parent="PauseOverlay/PauseMenu" instance=ExtResource( 4 )]
+margin_top = 0.0
+margin_right = 270.0
 margin_bottom = 84.0
 
 [node name="MainScreenButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 5 )]
+margin_left = 0.0
 margin_top = 92.0
-margin_right = 274.0
+margin_right = 270.0
 margin_bottom = 176.0
-text = "Back to Main Screen"
+text = "Main Screen"
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 6 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
 margin_top = 184.0
-margin_right = 274.0
+margin_right = 270.0
 margin_bottom = 270.0

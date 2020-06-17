@@ -1,12 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UserInterface/RetryButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 47
+font_data = ExtResource( 2 )
 
 [node name="RetryButton" type="Button"]
+margin_top = -1.22774
 margin_right = 274.0
-margin_bottom = 87.0
+margin_bottom = 85.7723
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.00784314, 0.0196078, 0.772549, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.12549, 1, 0, 1 )
 text = "Retry"
 script = ExtResource( 1 )
 __meta__ = {

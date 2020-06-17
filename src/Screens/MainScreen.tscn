@@ -1,20 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/background.png" type="Texture" id=2]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="DynamicFont" id=1]
-size = 100
-outline_size = 2
-outline_color = Color( 0.972549, 0.0352941, 0.0352941, 1 )
+[sub_resource type="DynamicFont" id=2]
+size = 47
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 35
+[sub_resource type="DynamicFont" id=3]
+size = 47
 font_data = ExtResource( 6 )
 
 [node name="MainScreen" type="Control"]
@@ -28,7 +25,8 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+margin_top = -2.65002
+margin_bottom = -2.65002
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -40,11 +38,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -304.427
-margin_top = -412.064
-margin_right = 316.573
-margin_bottom = -91.0637
-custom_fonts/font = SubResource( 1 )
+margin_left = -307.077
+margin_top = -417.364
+margin_right = 313.923
+margin_bottom = -96.3637
 text = "Rescue 51"
 
 [node name="Menu" type="VBoxContainer" parent="."]
@@ -61,12 +58,21 @@ __meta__ = {
 }
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 4 )]
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 360.0
 margin_bottom = 73.0
 custom_fonts/font = SubResource( 2 )
-text = "Play"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
 margin_top = 81.0
 margin_right = 360.0
 margin_bottom = 154.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.00784314, 0.0196078, 0.772549, 1 )
+custom_colors/font_color_pressed = Color( 0.12549, 1, 0, 1 )
