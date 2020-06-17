@@ -4,7 +4,8 @@ const GRAVITY = 9.81
 const SPEED = 100
 const FLOOR = Vector2(0,-1)
 
-const FIREBALL = preload("res://src/Objects/Fireball.tscn")
+#const FIREBALL = preload("res://src/Objects/Fireball.tscn")
+const FIREBALL = preload("res://src/Objects/Fireball2.tscn")
 
 var velocity = Vector2()
 
@@ -65,8 +66,11 @@ func _process(delta):
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 320
+#		$Timer2.start()
 		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("shooting")
+		$Timer2.start()
+		
+#		$AnimatedSprite.play("shooting")
 		
 	elif Player.position.x > position.x + target_player_dist and sees_player():
 		next_direction = 1
@@ -75,11 +79,14 @@ func _process(delta):
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
 	elif Player.position.x > position.x + target_player_shoot and sees_player():
+#		$Timer2.start()
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 320
+#		$Timer2.start()
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("shooting")
+		$Timer2.start()
+#		$AnimatedSprite.play("shooting")
 #		var fireball = FIREBALL.instance()
 #		if sign($Position2D.position.x) == 1:
 #			fireball.set_bullet_direction(1)
@@ -123,10 +130,11 @@ func _on_Timer_timeout():
 
 
 func _on_Timer2_timeout():
+#	$AnimatedSprite.play("shooting")
 	var fireball = FIREBALL.instance()
 	if sign(next_direction) == 1:
 		fireball.set_bullet_direction(1)
-			#$Position2D.position.x *= -1
+#		$Position2D.position.x *= -1
 	else:
 		fireball.set_bullet_direction(-1)
 	get_parent().add_child(fireball)
