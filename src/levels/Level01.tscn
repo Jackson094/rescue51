@@ -8,9 +8,9 @@
 [ext_resource path="res://assets/music/Illuminati Song Full The XFiles Theme (online-audio-converter.com)(1).wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/background/stackablebuilding.png" type="Texture" id=7]
 [ext_resource path="res://src/levels/DESERTOBJECTS.tres" type="TileSet" id=8]
+[ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/levels/Level02.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/DESERT2.tres" type="TileSet" id=11]
-[ext_resource path="res://src/actors/Enemy2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0.261963, 128, 0.261963, 0.323761, 128, 0.323761 )
@@ -1026,7 +1026,7 @@ volume_db = -14.122
 autoplay = true
 max_distance = 1991.0
 
-[node name="Enemy2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2126.86, 956.275 )
+[node name="Enemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3326.53, 584.842 )
 
 [editable path="Portal2D2"]

@@ -35,27 +35,27 @@ animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "shooting",
-"speed": 20.0
+"speed": 13.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.2064, 53.4714 )
+extents = Vector2( 28.5875, 53.4714 )
 
 [node name="Enemy2" type="KinematicBody2D"]
-position = Vector2( 91.7576, -164.576 )
+position = Vector2( 35.3918, -42.0415 )
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -17.5817, 116.483 )
-scale = Vector2( 6.2794, 6.73072 )
+position = Vector2( 63.2911, -46.4879 )
+scale = Vector2( 5.13064, 5.85 )
 frames = SubResource( 1 )
-animation = "idle"
-frame = 1
+animation = "shooting"
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -91.8441, 154.837 )
+position = Vector2( 3.7328, -14.2606 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -63,16 +63,18 @@ wait_time = 0.005
 one_shot = true
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( -92.5343, 163.956 )
-__meta__ = {
-"_gizmo_extents_": 2.0
-}
+position = Vector2( 96.5848, -15.4645 )
 
 [node name="Position2D2" type="Position2D" parent="."]
-position = Vector2( -96.14, 165.467 )
+position = Vector2( -101.528, -12.023 )
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+process_mode = 0
+wait_time = 0.8
+
+[node name="Timer3" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.8
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

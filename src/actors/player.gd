@@ -15,7 +15,7 @@ var speed = Vector2(50, 100)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	contact = true
-	#die()
+	die()
 
 func _physics_process(delta):
 	
@@ -72,7 +72,7 @@ func _physics_process(delta):
 		if velocity.y < 0:
 			$AnimatedSprite.play("jump")
 		else:
-			velocity.y = 500
+			velocity.y = 700
 			$AnimatedSprite.play("fall")
 	
 	velocity = move_and_slide(velocity, FLOOR)
