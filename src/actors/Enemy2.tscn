@@ -39,7 +39,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 28.5875, 53.4714 )
+extents = Vector2( 23.4786, 51.038 )
 
 [node name="Enemy2" type="KinematicBody2D"]
 position = Vector2( 35.3918, -42.0415 )
@@ -55,11 +55,11 @@ animation = "shooting"
 frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.7328, -14.2606 )
+position = Vector2( 1.92781, -16.0656 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.005
+wait_time = 0.09
 one_shot = true
 
 [node name="Position2D" type="Position2D" parent="."]

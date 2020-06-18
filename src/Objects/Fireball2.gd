@@ -31,6 +31,6 @@ func _on_Fireball_body_entered(body):
 		queue_free()
 	if "Player" in body.name:
 		body.dead()
-	queue_free()
+		queue_free()
 		 
 		

@@ -12,8 +12,8 @@ var velocity = Vector2()
 var react_time = 500
 var next_direction = 0
 var next_direction_time = 0
-var target_player_dist = 500
-var target_player_shoot = 440
+var target_player_dist = 300
+var target_player_shoot = 200
 var dir = 0
 var next_jump_time = -1
 
@@ -58,11 +58,13 @@ func dead():
 func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():
 		$Timer2.stop()
+		
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 310
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
+		$Timer3.start()
 	elif Player.position.x < position.x - target_player_shoot and sees_player():
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
@@ -87,6 +89,7 @@ func _process(delta):
 		velocity.x = next_direction * 310
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
+		$Timer2.start()
 	elif Player.position.x > position.x + target_player_shoot and sees_player():
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time

@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-export(int) var hp =2
+export(int) var hp =3
 
 export var stomp_impulse: = 200.0
 
 const FLOOR = Vector2(0,-1)
-var GRAVITY = 17
+export(int) var GRAVITY = 17
 const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 const UP_SPEED = 50
 var contact = false
