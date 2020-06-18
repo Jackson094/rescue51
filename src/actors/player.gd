@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export(int) var hp =2
+
 export var stomp_impulse: = 200.0
 
 const FLOOR = Vector2(0,-1)
@@ -92,5 +94,7 @@ func die() -> void:
 	queue_free()
 
 func dead():
-	velocity = Vector2(0,0)
-	PlayerData.deaths += 1
+	hp -= 1
+	if hp <= 0:
+		velocity = Vector2(0,0)
+		PlayerData.deaths += 1

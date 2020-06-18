@@ -9,7 +9,7 @@ func _ready():
 	pass 
 	
 	
-func set_bullet2_direction(dir):
+func set_bullet_direction(dir):
 	direction = dir
 	if dir == -1:
 		$AnimatedSprite.flip_h = true
@@ -26,9 +26,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Fireball_body_entered(body):
-#			if "Enemy" in body.name:
-#		body.dead()
-#		queue_free()
+	if "TileMap" in body.name:
+#		queue_free()	
+		queue_free()
 	if "Player" in body.name:
 		body.dead()
 	queue_free()
