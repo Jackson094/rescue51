@@ -1048,6 +1048,7 @@ position = Vector2( -201, -760 )
 stream = ExtResource( 6 )
 volume_db = -14.122
 autoplay = true
+stream_paused = true
 max_distance = 1991.0
 
 [editable path="Portal2D2"]
