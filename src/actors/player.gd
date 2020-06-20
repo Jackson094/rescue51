@@ -91,6 +91,7 @@ func die() -> void:
 
 func dead():
 	hp -= 1
+	$Health.set_current(hp)
 	if hp <= 0:
 		velocity = Vector2(0,0)
 		PlayerData.deaths += 1

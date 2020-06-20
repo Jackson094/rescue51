@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://assets/desert_BG.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/levels/Level02.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/DESERT2.tres" type="TileSet" id=11]
+[ext_resource path="res://src/levels/Level01.gd" type="Script" id=12]
+[ext_resource path="res://src/Health/HealthBar.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0.261963, 128, 0.261963, 0.323761, 128, 0.323761 )
@@ -952,6 +954,7 @@ points = PoolVector2Array( 136, 80, 0, 80, 0, 0, 136, 0 )
 
 [node name="Level01" type="Node2D"]
 position = Vector2( 1, 0 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -66.8322 ]
 }
@@ -981,6 +984,12 @@ margin_left = 3.81458
 margin_top = -0.0773315
 margin_right = 3.81445
 margin_bottom = -0.0773926
+
+[node name="HealthBar" parent="InterfaceLayer/UserInterface" instance=ExtResource( 13 )]
+margin_left = 54.0
+margin_top = 14.0
+margin_right = 609.0
+margin_bottom = 61.0
 
 [node name="Tiles and objects" type="Node2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/dangerobjects.tres" type="TileSet" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://src/Actors/Enemy2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Levels/solidundergroundtiles.tres" type="TileSet" id=12]
 [ext_resource path="res://src/Levels/undergroundBACKGROUNDtiles.tres" type="TileSet" id=13]
+[ext_resource path="res://src/levels/Level02.gd" type="Script" id=14]
+[ext_resource path="res://src/Health/HealthBar.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 123.653, 56.7197 )
@@ -21,6 +23,7 @@ extents = Vector2( 123.653, 56.7197 )
 extents = Vector2( 1377.83, 50.3273 )
 
 [node name="Level02" type="Node2D"]
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 4467.15, 5515.16 ],
 "_edit_vertical_guides_": [ 8276.56 ]
@@ -43,6 +46,12 @@ __meta__ = {
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 
 [node name="UserInterface" parent="InterfaceLayer" instance=ExtResource( 1 )]
+
+[node name="HealthBar" parent="InterfaceLayer/UserInterface" instance=ExtResource( 15 )]
+margin_left = 58.0
+margin_top = 20.0
+margin_right = 613.0
+margin_bottom = 67.0
 
 [node name="Tiles and objects" type="Node2D" parent="."]
 
