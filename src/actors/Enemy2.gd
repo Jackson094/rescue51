@@ -17,8 +17,8 @@ var target_player_shoot = 200
 var dir = 0
 var next_jump_time = -1
 
-var eye_reach = 250
-var vision = 640
+var eye_reach = 200
+var vision = 576
 
 var is_dead = false
 
@@ -58,17 +58,16 @@ func dead():
 func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():
 		$Timer2.stop()
-		
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 310
+		velocity.x = next_direction * 360
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
 		$Timer3.start()
 	elif Player.position.x < position.x - target_player_shoot and sees_player():
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 310
+		velocity.x = next_direction * 360
 #		$AnimatedSprite.flip_h = true
 #		$AnimatedSprite.play("shooting")
 #		var fireball = FIREBALL.instance()
@@ -86,14 +85,14 @@ func _process(delta):
 		$Timer3.stop()
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 310
+		velocity.x = next_direction * 360
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
 		$Timer2.start()
 	elif Player.position.x > position.x + target_player_shoot and sees_player():
 		next_direction = 1
-		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 310
+		#next_direction_time = OS.get_ticks_msec() + react_time
+		velocity.x = next_direction * 360
 #		$AnimatedSprite.flip_h = false
 #		$AnimatedSprite.play("shooting")
 #		var fireball = FIREBALL.instance()
@@ -115,15 +114,15 @@ func _process(delta):
 			$Timer2.stop()
 		if not $Timer3.is_stopped():
 			$Timer3.stop()
-	elif Player.position.x == position.x and sees_player():
-		next_direction = 0
-		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 310
-		$AnimatedSprite.play("shooting")
+#	elif Player.position.x == position.x and sees_player():
+#		next_direction = 0
+#		next_direction_time = OS.get_ticks_msec() + react_time
+#		velocity.x = next_direction * 310
+#		$AnimatedSprite.play("shooting")
 		
 	if OS.get_ticks_msec() > next_jump_time and next_jump_time != -1 and is_on_floor():
 		if Player.position.y < position.y - 64 and sees_player():
-			velocity.y = -541
+			velocity.y = -560
 		next_jump_time = -1
 
 	if Player.position.y < position.y - 64 and next_jump_time == -1 and sees_player():
@@ -133,7 +132,7 @@ func _process(delta):
 		velocity.y = 0
 	
 	if not is_on_floor() and velocity.y > 0:
-		velocity.y = 551
+		velocity.y = 570
 	
 	if is_dead == false:
 		#$AnimatedSprite.play("idle")
