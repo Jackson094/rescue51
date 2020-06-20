@@ -32,20 +32,20 @@ animations = [ {
 "name": "shooting",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "fall",
-"speed": 1.5
+"name": "jump",
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "jump",
-"speed": 1.0
+"name": "fall",
+"speed": 1.5
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -99,4 +99,7 @@ volume_db = -15.0
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
 volume_db = -12.0
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

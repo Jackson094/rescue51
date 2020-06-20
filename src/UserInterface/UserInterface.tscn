@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/background/autopsy.jpg" type="Texture" id=7]
 [ext_resource path="res://assets/background/41yTSfucaoL._SX355_.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/aliens_game_over2.wav" type="AudioStream" id=9]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -18,6 +19,9 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="over" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
 
 [node name="Bimage" type="TextureRect" parent="."]
 visible = false

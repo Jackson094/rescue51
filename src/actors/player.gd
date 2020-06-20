@@ -86,15 +86,19 @@ func _physics_process(delta):
 			die()
 
 func die() -> void:
+	$Timer.start()
 
-	if contact == true:
-		PlayerData.captures += 1
-	else:
-		PlayerData.deaths += 1
-	queue_free()
 
 func dead():
 	hp -= 1
 	if hp <= 0:
 		velocity = Vector2(0,0)
 		PlayerData.deaths += 1
+
+
+func _on_Timer_timeout():
+	if contact == true:
+		PlayerData.captures += 1
+	else:
+		PlayerData.deaths += 1
+	queue_free()
