@@ -43,7 +43,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		self.paused = not self.paused
 
 
-
+func _on_Player_damaged()-> void:
+	pass
 
 
 func set_paused(value: bool) -> void:
