@@ -59,7 +59,7 @@ func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():
 		$Timer2.stop()
 		next_direction = -1
-		next_direction_time = OS.get_ticks_msec() + react_time
+		#next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 360
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
@@ -81,10 +81,9 @@ func _process(delta):
 #		fireball.position = $Position2D2.global_position
 		$Timer2.start()
 	elif Player.position.x > position.x + target_player_dist and sees_player():
-		
 		$Timer3.stop()
 		next_direction = 1
-		next_direction_time = OS.get_ticks_msec() + react_time
+		#next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 360
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
@@ -121,11 +120,11 @@ func _process(delta):
 #		$AnimatedSprite.play("shooting")
 		
 	if OS.get_ticks_msec() > next_jump_time and next_jump_time != -1 and is_on_floor():
-		if Player.position.y < position.y - 64 and sees_player():
+		if Player.position.y < position.y - 20 and sees_player():
 			velocity.y = -560
 		next_jump_time = -1
 
-	if Player.position.y < position.y - 64 and next_jump_time == -1 and sees_player():
+	if Player.position.y < position.y - 20 and next_jump_time == -1 and sees_player():
 		next_jump_time = OS.get_ticks_msec() + react_time
 
 	if is_on_floor() and velocity.y > 0:

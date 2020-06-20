@@ -56,31 +56,31 @@ func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():
 		next_direction = -1
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 320
+		velocity.x = next_direction * 400
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
-	elif Player.position.x < position.x - target_player_shoot and sees_player():
-		next_direction = -1
-		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 320
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("jumping")
+#	elif Player.position.x < position.x - target_player_shoot and sees_player():
+#		next_direction = -1
+#		next_direction_time = OS.get_ticks_msec() + react_time
+#		velocity.x = next_direction * 320
+#		$AnimatedSprite.flip_h = true
+#		$AnimatedSprite.play("jumping")
 	elif Player.position.x > position.x + target_player_dist and sees_player():
 		next_direction = 1
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 320
+		velocity.x = next_direction * 400
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
-	elif Player.position.x > position.x + target_player_shoot and sees_player():
-		next_direction = 1
-		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 320
-		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play("jumping")
-	elif Player.position.x == position.x:
+#	elif Player.position.x > position.x + target_player_shoot and sees_player():
+#		next_direction = 1
+#		next_direction_time = OS.get_ticks_msec() + react_time
+#		velocity.x = next_direction * 320
+#		$AnimatedSprite.flip_h = false
+#		$AnimatedSprite.play("jumping")
+	elif not sees_player():
 		next_direction = 0
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 320
+		velocity.x = next_direction * 400
 		$AnimatedSprite.play("idle")
 	
 
@@ -98,16 +98,18 @@ func _process(delta):
 	
 	if not is_on_floor() and velocity.y > 0:
 		velocity.y = 550
-		$AnimatedSprite.play("jumping")
 	
 	if is_dead == false:
-		#$AnimatedSprite.play("idle")
+		$AnimatedSprite.play("idle")
 		velocity.y += GRAVITY
 		velocity = move_and_slide(velocity,FLOOR)
 	
 	if is_on_wall():
 		dir = dir * -1
 
+
+
+
+
 func _on_Timer_timeout():
 	queue_free()
-

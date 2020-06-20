@@ -35,15 +35,15 @@ animations = [ {
 "name": "idle",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "running",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "shooting",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "running",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 21 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 22 ) ],
 "loop": true,
@@ -62,10 +62,12 @@ script = ExtResource( 27 )
 position = Vector2( 17.643, -14.0883 )
 scale = Vector2( 0.820805, 0.953143 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "running"
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.61322, -0.204788 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
