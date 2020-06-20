@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/BlueAlien/BlueAlienJump/blue__0030_jump_4.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/BlueAlien/BlueAlienShoot/blue__0037_fire_2.png" type="Texture" id=18]
 [ext_resource path="res://assets/music/shoot1.wav" type="AudioStream" id=19]
 [ext_resource path="res://src/Health/Health.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Health/HealthBar.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -104,5 +105,11 @@ volume_db = -12.0
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Health" parent="." instance=ExtResource( 20 )]
+
+[node name="HealthBar" parent="." instance=ExtResource( 21 )]
+margin_left = 49.0
+margin_top = -147.0
+margin_right = 136.0
+margin_bottom = -129.0
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

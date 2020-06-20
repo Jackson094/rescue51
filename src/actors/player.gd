@@ -79,22 +79,47 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, FLOOR)
 
+
+
+
+
+#	for i in get_slide_count():
+#		var collision = get_slide_collision(i)
+#		if collision.collider.name == 'Danger':
+#			print("I collided with object", collision.collider.name)
+#			dead()
+	
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == 'Danger':
 			print("I collided with object", collision.collider.name)
-			die()
+			hp -= 1
+			$Health.set_current(hp)
+			if hp <= 0:
+				$Timer.start()
+				velocity = Vector2(0,0)
+				PlayerData.deaths += 1
 
 func die() -> void:
 	$Timer.start()
+
 
 
 func dead():
 	hp -= 1
 	$Health.set_current(hp)
 	if hp <= 0:
+		$Timer.start()
 		velocity = Vector2(0,0)
 		PlayerData.deaths += 1
+
+
+#func dead():
+#	hp -= 1
+#	$Health.set_current(hp)
+#	if hp <= 0:
+#		velocity = Vector2(0,0)
+#		PlayerData.deaths += 1
 
 
 func _on_Timer_timeout():

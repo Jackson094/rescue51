@@ -986,6 +986,7 @@ margin_right = 3.81445
 margin_bottom = -0.0773926
 
 [node name="HealthBar" parent="InterfaceLayer/UserInterface" instance=ExtResource( 13 )]
+visible = false
 margin_left = 54.0
 margin_top = 14.0
 margin_right = 609.0
@@ -1057,3 +1058,5 @@ position = Vector2( 1358.56, 856.925 )
 position = Vector2( 6856.78, 917.355 )
 
 [editable path="Portal2D2"]
+
+[editable path="Player"]

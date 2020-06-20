@@ -112,4 +112,7 @@ position = Vector2( 30.9087, -222.542 )
 [node name="ShootSound" parent="Player" index="6"]
 position = Vector2( 27.8178, -222.542 )
 
+[node name="HealthBar" parent="Player" index="9"]
+visible = false
+
 [editable path="Player"]
