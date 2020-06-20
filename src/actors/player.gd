@@ -96,11 +96,13 @@ func _physics_process(delta):
 			hp -= 1
 			$Health.set_current(hp)
 			if hp <= 0:
+				$AnimatedSprite.play("dead")
 				$Timer.start()
 				velocity = Vector2(0,0)
 				PlayerData.deaths += 1
 
 func die() -> void:
+	$AnimatedSprite.play("dead")
 	$Timer.start()
 
 
@@ -109,6 +111,7 @@ func dead():
 	hp -= 1
 	$Health.set_current(hp)
 	if hp <= 0:
+		$AnimatedSprite.play("dead")
 		$Timer.start()
 		velocity = Vector2(0,0)
 		PlayerData.deaths += 1

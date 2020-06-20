@@ -100,7 +100,7 @@ func _process(delta):
 		velocity.y = 550
 	
 	if is_dead == false:
-		$AnimatedSprite.play("idle")
+		#$AnimatedSprite.play("idle")
 		velocity.y += GRAVITY
 		velocity = move_and_slide(velocity,FLOOR)
 	

@@ -36,7 +36,8 @@ func _on_Player_died() -> void:
 	title_label.text = MESSAGE_DIED
 	background_image_dead.visible = true
 	var oversound = $over
-	oversound.play()	
+	oversound.play()
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and title_label.text != MESSAGE_CAPTURED:
@@ -52,3 +53,4 @@ func set_paused(value: bool) -> void:
 	scene_tree.paused = value
 	pause_overlay.visible = value
 	#background_image.visible = value
+
