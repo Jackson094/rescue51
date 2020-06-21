@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/agent/RunGun/RunGun_05.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/Enemy2.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/agent/Shoot/Shoot_06.png" type="Texture" id=17]
 [ext_resource path="res://assets/agent/RunGun/RunGun_08.png" type="Texture" id=18]
 [ext_resource path="res://assets/agent/Shoot/Shoot_05.png" type="Texture" id=19]
+[ext_resource path="res://assets/music/shoot1.wav" type="AudioStream" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -75,6 +76,10 @@ wait_time = 0.8
 [node name="Timer3" type="Timer" parent="."]
 process_mode = 0
 wait_time = 0.8
+
+[node name="EnemyShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+volume_db = -12.683
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

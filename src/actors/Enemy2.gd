@@ -57,13 +57,14 @@ func dead():
 
 func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():
-		$Timer2.stop()
+		#$Timer2.stop()
 		next_direction = -1
 		#next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 360
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
-		$Timer3.start()
+		#$Timer3.start()
+		$Timer2.start()
 	elif Player.position.x < position.x - target_player_shoot and sees_player():
 		next_direction = -1
 		#next_direction_time = OS.get_ticks_msec() + react_time
@@ -81,13 +82,14 @@ func _process(delta):
 #		fireball.position = $Position2D2.global_position
 		$Timer2.start()
 	elif Player.position.x > position.x + target_player_dist and sees_player():
-		$Timer3.stop()
+		#$Timer3.stop()
 		next_direction = 1
 		#next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 360
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
-		$Timer2.start()
+		#$Timer2.start()
+		$Timer3.start()
 	elif Player.position.x > position.x + target_player_shoot and sees_player():
 		next_direction = 1
 		#next_direction_time = OS.get_ticks_msec() + react_time
@@ -132,6 +134,7 @@ func _process(delta):
 	
 	if not is_on_floor() and velocity.y > 0:
 		velocity.y = 570
+		$AnimatedSprite.play("shooting")
 	
 	if is_dead == false:
 		#$AnimatedSprite.play("idle")
@@ -149,6 +152,8 @@ func _on_Timer2_timeout():
 	$AnimatedSprite.flip_h = false
 	$AnimatedSprite.play("shooting")
 	var fireball = FIREBALL.instance()
+	var shoot = $EnemyShootSound
+	shoot.play()
 	fireball.set_bullet_direction(1)
 	get_parent().add_child(fireball)
 	fireball.position = $Position2D.global_position
@@ -157,6 +162,8 @@ func _on_Timer3_timeout():
 	$AnimatedSprite.flip_h = true
 	$AnimatedSprite.play("shooting")
 	var fireball = FIREBALL.instance()
+	var shoot = $EnemyShootSound
+	shoot.play()
 	fireball.set_bullet_direction(-1)
 	get_parent().add_child(fireball)
 	fireball.position = $Position2D2.global_position

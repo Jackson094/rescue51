@@ -18,7 +18,7 @@
 [ext_resource path="res://assets/music/jump2.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/BlueAlien/BlueAlienShoot/blue__0039_fire_4.png" type="Texture" id=17]
 [ext_resource path="res://assets/BlueAlien/BlueAlienShoot/blue__0037_fire_2.png" type="Texture" id=18]
-[ext_resource path="res://assets/music/shoot1.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/music/laser.wav" type="AudioStream" id=19]
 [ext_resource path="res://src/Health/Health.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/Health/HealthBar.tscn" type="PackedScene" id=21]
 [ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0022_dead_x.png" type="Texture" id=22]
@@ -29,6 +29,11 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "dead",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
@@ -49,11 +54,6 @@ animations = [ {
 "loop": true,
 "name": "shooting",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "dead",
-"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
