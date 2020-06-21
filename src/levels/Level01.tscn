@@ -1037,9 +1037,6 @@ margin_bottom = 40.6582
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 631.16, 826.159 )
-hp = 3
-stomp_impulse = 200.0
-GRAVITY = 17
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
 visible = false

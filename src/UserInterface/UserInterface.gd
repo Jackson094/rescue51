@@ -9,6 +9,7 @@ onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButto
 onready var background_image: TextureRect = $Bimage
 onready var background_image_dead: TextureRect = $Bimage2
 onready var over: AudioStreamPlayer2D = $over
+onready var pauseimage: TextureRect = $PauseOverlay/pauseimg
 
 const MESSAGE_DIED: = "You died"
 const MESSAGE_CAPTURED = "You've been captured"
@@ -23,6 +24,7 @@ func _ready() -> void:
 
 func _on_Player_captured() -> void:
 	self.paused = true
+	pauseimage.visible = false
 	title_label.text = MESSAGE_CAPTURED
 	background_image.visible = true
 	#over.visible = true
@@ -33,6 +35,7 @@ func _on_Player_captured() -> void:
 
 func _on_Player_died() -> void:
 	self.paused = true
+	pauseimage.visible = false
 	title_label.text = MESSAGE_DIED
 	background_image_dead.visible = true
 	var oversound = $over

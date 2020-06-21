@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/background/autopsy.jpg" type="Texture" id=7]
 [ext_resource path="res://assets/background/41yTSfucaoL._SX355_.jpg" type="Texture" id=8]
 [ext_resource path="res://assets/aliens_game_over2.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/background/180126-alien-mn-1345_a45560a5a5fd8459dcc14b914ddf1dd2.jpg" type="Texture" id=10]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -59,6 +60,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.321569 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pauseimg" type="TextureRect" parent="PauseOverlay"]
+margin_left = -154.258
+margin_top = -165.332
+margin_right = 2027.74
+margin_bottom = 1168.67
+texture = ExtResource( 10 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
