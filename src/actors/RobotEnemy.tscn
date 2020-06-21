@@ -35,24 +35,24 @@ animations = [ {
 "name": "idle",
 "speed": 7.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 21 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "shooting",
-"speed": 5.0
+"name": "jumping",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "running",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 22 ) ],
+"frames": [  ],
 "loop": true,
-"name": "jumping",
-"speed": 7.0
+"name": "shooting",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 117.318, 212.47 )
+extents = Vector2( 93.5842, 212.47 )
 
 [node name="RobotEnemy" type="KinematicBody2D"]
 position = Vector2( 51.998, -187.458 )

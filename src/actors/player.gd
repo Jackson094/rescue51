@@ -18,6 +18,8 @@ var speed = Vector2(50, 100)
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	pass
 	contact = true
+	if "Friend" in body.name:
+		contact = false
 #	$AnimatedSprite.play("dead")
 	#die()
 
