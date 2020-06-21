@@ -1042,6 +1042,9 @@ margin_bottom = 71.1643
 position = Vector2( 636.23, -2540.19 )
 GRAVITY = 0
 
+[node name="HealthBar" parent="Player" index="9"]
+visible = false
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
 visible = false
 position = Vector2( -201, -760 )
@@ -1052,3 +1055,5 @@ stream_paused = true
 max_distance = 1991.0
 
 [editable path="Portal2D2"]
+
+[editable path="Player"]

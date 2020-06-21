@@ -16,8 +16,10 @@ var timercalled = false
 var speed = Vector2(50, 100)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
+	pass
 	contact = true
-	die()
+#	$AnimatedSprite.play("dead")
+	#die()
 
 func _physics_process(delta):
 	
@@ -95,12 +97,17 @@ func _physics_process(delta):
 			#$AnimatedSprite.play("dead")
 			$Timer.start()
 			timercalled = true
+			
+		if contact:
+			hp = 0 
+			$Health.set_current(hp)
+			$Timer.start()
+			timercalled = true
 	else:
 		$AnimatedSprite.play("dead")
 	
 func die() -> void:
-	$AnimatedSprite.play("dead")
-	$Timer.start()
+	touch = true
 
 
 
@@ -108,11 +115,11 @@ func dead():
 	hp -= 1
 	$Health.set_current(hp)
 	if hp <= 0:
-		$AnimatedSprite.play("dead")
-		$Timer.start()
-		velocity = Vector2(0,0)
-		PlayerData.deaths += 1
-
+#		$AnimatedSprite.play("dead")
+#		$Timer.start()
+#		velocity = Vector2(0,0)
+#		PlayerData.deaths += 1
+		touch = true
 
 #func dead():
 #	hp -= 1
