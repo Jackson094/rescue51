@@ -9,10 +9,10 @@ export(int) var GRAVITY = 17
 const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 const UP_SPEED = 50
 var contact = false
-
+var touch = false
 var velocity = Vector2()
 var on_floor = false
-
+var timercalled = false
 var speed = Vector2(50, 100)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
@@ -80,27 +80,24 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR)
 
 
-
-
-
-#	for i in get_slide_count():
-#		var collision = get_slide_collision(i)
-#		if collision.collider.name == 'Danger':
-#			print("I collided with object", collision.collider.name)
-#			dead()
-	
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.name == 'Danger':
-			print("I collided with object", collision.collider.name)
-			hp -= 1
+	if !timercalled:
+		if !touch:
+			for i in get_slide_count():
+				var collision = get_slide_collision(i)
+				if collision.collider.name == 'Danger':
+					print("I collided with object", collision.collider.name)
+					touch = true
+					print(touch)
+		else:
+			hp = 0 
 			$Health.set_current(hp)
-			if hp <= 0:
-				$AnimatedSprite.play("dead")
-				$Timer.start()
-				velocity = Vector2(0,0)
-				PlayerData.deaths += 1
-
+			print("start timer")
+			#$AnimatedSprite.play("dead")
+			$Timer.start()
+			timercalled = true
+	else:
+		$AnimatedSprite.play("dead")
+	
 func die() -> void:
 	$AnimatedSprite.play("dead")
 	$Timer.start()
@@ -126,6 +123,7 @@ func dead():
 
 
 func _on_Timer_timeout():
+	print("in timer")
 	if contact == true:
 		PlayerData.captures += 1
 	else:
