@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/BlueAlien/BlueAlienJump/blue__0030_jump_4.png" type="Texture" id=2]
@@ -21,11 +21,7 @@
 [ext_resource path="res://assets/music/shoot1.wav" type="AudioStream" id=19]
 [ext_resource path="res://src/Health/Health.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/Health/HealthBar.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0025_dead_4.png" type="Texture" id=22]
-[ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0024_dead_3.png" type="Texture" id=23]
-[ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0022_dead_1.png" type="Texture" id=24]
-[ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0026_dead_5.png" type="Texture" id=25]
-[ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0023_dead_2.png" type="Texture" id=26]
+[ext_resource path="res://assets/BlueAlien/BlueAlienDead/blue__0022_dead_x.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -33,11 +29,6 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "dead",
-"speed": 7.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
@@ -49,15 +40,20 @@ animations = [ {
 "name": "fall",
 "speed": 1.5
 }, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "shooting",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "jump",
-"speed": 1.0
+"name": "dead",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

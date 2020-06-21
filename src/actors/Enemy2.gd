@@ -66,7 +66,7 @@ func _process(delta):
 		$Timer3.start()
 	elif Player.position.x < position.x - target_player_shoot and sees_player():
 		next_direction = -1
-		next_direction_time = OS.get_ticks_msec() + react_time
+		#next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 360
 #		$AnimatedSprite.flip_h = true
 #		$AnimatedSprite.play("shooting")
@@ -106,7 +106,7 @@ func _process(delta):
 		$Timer3.start()
 	elif not sees_player():
 		next_direction = 0
-		next_direction_time = OS.get_ticks_msec() + react_time
+		#next_direction_time = OS.get_ticks_msec() + react_time
 		velocity.x = next_direction * 310
 		$AnimatedSprite.play("idle")
 		if not $Timer2.is_stopped():

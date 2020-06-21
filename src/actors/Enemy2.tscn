@@ -22,11 +22,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "shooting",
-"speed": 13.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
@@ -36,6 +31,11 @@ animations = [ {
 "loop": true,
 "name": "running",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "shooting",
+"speed": 13.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
