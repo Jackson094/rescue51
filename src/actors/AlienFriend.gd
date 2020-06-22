@@ -61,10 +61,10 @@ func _process(delta):
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("run")
 		
-	elif (Player.position.x == position.x and sees_player()):
+	elif Player.position.x == position.x and sees_player():
 		next_direction = 0
 		next_direction_time = OS.get_ticks_msec() + react_time
-		velocity.x = next_direction * 400
+		velocity.x = 0
 		$AnimatedSprite.play("idle")
 
 	elif not sees_player():
