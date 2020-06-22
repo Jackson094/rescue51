@@ -1,44 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/PNGS/2.png" type="Texture" id=2]
-[ext_resource path="res://assets/GreenAlien/GreenAlienIdle/armor__0001_idle_2.png" type="Texture" id=3]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/agent/IdleGun/IdleGun_01.png" type="Texture" id=5]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
-
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 256, 192, 0, 192, 0, 0, 256, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 256, 192, 0, 192, 0, 0, 256, 0 )
-
-[sub_resource type="TileSet" id=5]
-0/name = "2.png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 256, 192 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/occluder = SubResource( 3 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 4 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 2
+extra_spacing_bottom = 1
+extra_spacing_char = 2
+extra_spacing_space = 1
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -59,11 +32,6 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 5 )
-format = 1
-tile_data = PoolIntArray( 720892, 0, 0, 655360, 0, 0, 655364, 0, 0, 655368, 0, 0, 655372, 0, 0, 655376, 0, 0, 655380, 0, 0, 655384, 0, 0, 655388, 0, 0 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -79,27 +47,25 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -29.0
-margin_top = -226.0
-margin_right = 1890.0
-margin_bottom = 1920.0
+margin_left = -23.0
+margin_top = -206.634
+margin_right = 1896.0
+margin_bottom = 1939.37
 focus_mode = 2
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "This is a tale of a hero named  [rainbow]X Æ A-12 [img=<200>x<200>]assets/BlueAlien/BlueAlienIdle/blue__0000_idle_1.png[/img] [/rainbow]
-X Æ A-12's friend crashed their spaceship on earth, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race."
-text = "This is a tale of a hero named  X Æ A-12  
-X Æ A-12's friend crashed their spaceship on earth, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race."
+bbcode_text = "[color=blue]This is a tale of an alien named[/color] [rainbow]X Æ A-12 [img=<175>x<175>]assets/BlueAlien/BlueAlienIdle/blue__0000_idle_1.png[/img] [/rainbow][color=#44FF00]Our hero's friend [img=<75>x<75>]assets/GreenAlien/GreenAlienIdle/armor__0000_idle_1.png[/img] [tornado radius=15 freq=2]crashed[/tornado] into earth on their spaceship, was kidnapped and taken to area 51 to have unspeakable tests run on them. [rainbow]X Æ A-12[/rainbow][color=blue] will stop at [shake rate=25 level=50]nothing[/shake] to rescue their friend from the treachery of the [fade length=12]human race.....[/fade]"
+text = "This is a tale of an alien named X Æ A-12  Our hero's friend  crashed into earth on their spaceship, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race....."
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-anchor_left = 0.546187
-anchor_top = 0.72175
-anchor_right = 0.546187
-anchor_bottom = 0.72175
+anchor_left = 0.473931
+anchor_top = 0.698335
+anchor_right = 0.473931
+anchor_bottom = 0.698335
 margin_left = -262.916
 margin_top = -74.5164
 margin_right = 187.084
@@ -116,28 +82,3 @@ margin_bottom = 125.0
 custom_fonts/font = SubResource( 2 )
 text = "Press to continue"
 next_scene_path = "res://src/Levels/prelevel1.tscn"
-
-[node name="IdleGun_01" type="Sprite" parent="."]
-position = Vector2( 899.81, 568.965 )
-scale = Vector2( 4.35743, 4.49377 )
-texture = ExtResource( 5 )
-
-[node name="IdleGun_02" type="Sprite" parent="."]
-position = Vector2( 1066.82, 565.856 )
-scale = Vector2( 4.35743, 4.49377 )
-texture = ExtResource( 5 )
-
-[node name="IdleGun_03" type="Sprite" parent="."]
-position = Vector2( 791.151, 569.635 )
-scale = Vector2( 4.35743, 4.49377 )
-texture = ExtResource( 5 )
-
-[node name="IdleGun_04" type="Sprite" parent="."]
-position = Vector2( 1164.89, 569.635 )
-scale = Vector2( 4.35743, 4.49377 )
-texture = ExtResource( 5 )
-
-[node name="armor__0001_idle_2" type="Sprite" parent="."]
-position = Vector2( 926.756, 604.031 )
-scale = Vector2( 0.234481, 0.147015 )
-texture = ExtResource( 3 )
