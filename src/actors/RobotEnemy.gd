@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export(int) var hp =3
+
 const GRAVITY = 9.81
 const SPEED = 100
 const FLOOR = Vector2(0,-1)
@@ -46,11 +48,14 @@ func sees_player():
 	return false
 			
 func dead():
-	is_dead = true
-	velocity = Vector2(0,0)
-#	$AnimatedSprite.play("dead")
-	$CollisionShape2D.disabled = true
-	$Timer.start()
+	hp -= 1
+	$Health.set_current(hp)
+	if hp <= 0:
+		is_dead = true
+		velocity = Vector2(0,0)
+#		$AnimatedSprite.play("dead")
+		$CollisionShape2D.disabled = true
+		$Timer.start()
 
 func _process(delta):
 	if Player.position.x < position.x - target_player_dist and sees_player():

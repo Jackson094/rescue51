@@ -2,13 +2,14 @@ extends Node2D
 
 
 
+
 func _ready():
+	var boss_health =$RobotEnemy/Health
+	var boss_health_bar = $RobotEnemy/HealthBar
 	
-#	var boss_health =$RobotEnemy/Health
-#	var boss_health_bar = $RobotEnemy/HealthBar
-	
-#	boss_health.connect("changed",boss_health_bar,"set_health")
-#	boss_health.connect("max_changed",boss_health_bar,"set_max")
+	boss_health.connect("changed",boss_health_bar,"set_value")
+	boss_health.connect("max_changed",boss_health_bar,"set_max")
+	boss_health.initialize()
 	
 	var player_health = $Player/Health
 #	var healthbar = $InterfaceLayer/UserInterface/HealthBar

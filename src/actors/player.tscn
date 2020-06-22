@@ -30,20 +30,10 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ) ],
-"loop": true,
-"name": "dead",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "shooting",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "fall",
-"speed": 1.5
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
@@ -54,6 +44,16 @@ animations = [ {
 "loop": true,
 "name": "jump",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "fall",
+"speed": 1.5
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "dead",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
