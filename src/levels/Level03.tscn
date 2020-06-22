@@ -2,7 +2,6 @@
 
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/laboratory.png" type="Texture" id=2]
-[ext_resource path="res://src/actors/Enemy2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/actors/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
@@ -19,6 +18,7 @@
 [ext_resource path="res://assets/tiles/Block_Dungeon_Basic_Smooth_All.png" type="Texture" id=17]
 [ext_resource path="res://assets/tiles/Block_Dungeon_Clean.png" type="Texture" id=18]
 [ext_resource path="res://assets/tiles/Grate_Circle.png" type="Texture" id=19]
+[ext_resource path="res://src/levels/Level03.gd" type="Script" id=20]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64 )
@@ -304,6 +304,7 @@ points = PoolVector2Array( 416, 192, 0, 192, 0, 0, 416, 0 )
 13/z_index = 0
 
 [node name="Level03" type="Node2D"]
+script = ExtResource( 20 )
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -399,17 +400,13 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 363.938, 461.883 )
-
-[node name="CollisionShape2D" parent="Player/EnemyDetector" index="0"]
-position = Vector2( 32, -49.6468 )
+position = Vector2( 339.938, 425.883 )
 
 [node name="AlienFriend" parent="." instance=ExtResource( 16 )]
 position = Vector2( 244.557, -1838.4 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 713.392, 437.958 )
-
 [editable path="RobotEnemy"]
+
+[editable path="RobotEnemy2"]
 
 [editable path="Player"]
