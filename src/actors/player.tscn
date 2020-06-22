@@ -25,35 +25,35 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "shooting",
+"name": "idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "run",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "fall",
-"speed": 1.5
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 1.0
 }, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "dead",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "idle",
+"name": "shooting",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "fall",
+"speed": 1.5
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -114,9 +114,9 @@ volume_db = -12.0
 max_amount = 3
 
 [node name="HealthBar" parent="." instance=ExtResource( 21 )]
-margin_left = 49.0
-margin_top = -147.0
-margin_right = 136.0
-margin_bottom = -129.0
+margin_left = -0.403595
+margin_top = -129.072
+margin_right = 68.5964
+margin_bottom = -115.072
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
