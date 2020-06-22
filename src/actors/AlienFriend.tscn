@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/GreenAlien/GreenAlienWalk/armor__0008_walk_3.png" type="Texture" id=9]
 [ext_resource path="res://assets/GreenAlien/GreenAlienWalk/armor__0007_walk_2.png" type="Texture" id=10]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ],
 "loop": true,
@@ -35,7 +35,7 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 32, -64.4638 )
 scale = Vector2( 0.237676, 0.209112 )
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "run"
 frame = 2
 
