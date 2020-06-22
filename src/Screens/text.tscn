@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/background/text-background.jpg" type="Texture" id=2]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
 
@@ -32,6 +33,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -230.0
+margin_top = -323.0
+margin_right = 2186.0
+margin_bottom = 1009.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -47,15 +59,15 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -23.0
-margin_top = -206.634
-margin_right = 1896.0
-margin_bottom = 1939.37
+margin_left = 34.0
+margin_top = -233.0
+margin_right = 1887.0
+margin_bottom = 837.0
 focus_mode = 2
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[color=blue]This is a tale of an alien named[/color] [rainbow]X Æ A-12 [img=<175>x<175>]assets/BlueAlien/BlueAlienIdle/blue__0000_idle_1.png[/img] [/rainbow][color=#44FF00]Our hero's friend [img=<75>x<75>]assets/GreenAlien/GreenAlienIdle/armor__0000_idle_1.png[/img] [tornado radius=15 freq=2]crashed[/tornado] into earth on their spaceship, was kidnapped and taken to area 51 to have unspeakable tests run on them. [rainbow]X Æ A-12[/rainbow][color=blue] will stop at [shake rate=25 level=50]nothing[/shake] to rescue their friend from the treachery of the [fade length=12]human race.....[/fade]"
-text = "This is a tale of an alien named X Æ A-12  Our hero's friend  crashed into earth on their spaceship, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race....."
+bbcode_text = "[color=blue]This is a tale of a hero named[/color] [rainbow]X Æ A-12 [img=<150>x<175>]assets/BlueAlien/BlueAlienIdle/blue__0000_idle_1.png[/img] [/rainbow][color=#44FF00]Our hero's friend [img=<75>x<75>]assets/GreenAlien/GreenAlienIdle/armor__0000_idle_1.png[/img] [tornado radius=15 freq=2]crashed[/tornado] into earth on their spaceship, was kidnapped and taken to area 51 to have unspeakable tests run on them. [rainbow]X Æ A-12[/rainbow][color=blue] will stop at [shake rate=25 level=50]nothing[/shake] to rescue their friend from the [fade length=40]treachery of the human race.....[/fade]"
+text = "This is a tale of a hero named X Æ A-12  Our hero's friend  crashed into earth on their spaceship, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race....."
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false

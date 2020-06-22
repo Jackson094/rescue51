@@ -61,7 +61,7 @@ __meta__ = {
 [node name="Title" parent="." instance=ExtResource( 4 )]
 margin_right = -5.0
 text = "Congratulations! 
-You saved your friend"
+You won"
 
 [node name="Result" type="Label" parent="."]
 visible = false

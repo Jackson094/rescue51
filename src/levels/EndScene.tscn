@@ -63,17 +63,17 @@ next_scene = ExtResource( 8 )
 position = Vector2( 3820.03, -363.181 )
 
 [node name="CollisionShape2D" parent="Portal2D2" index="1"]
-position = Vector2( -5650.27, -1059.1 )
+position = Vector2( -5609.83, -1335.12 )
 
 [node name="ColorRect" parent="Portal2D2/TransitionLayer" index="0"]
-margin_left = -6.35913
-margin_top = -162.788
-margin_right = -292.359
-margin_bottom = -25.7877
+margin_left = -11.6334
+margin_top = -122.352
+margin_right = -297.633
+margin_bottom = 14.6483
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 687.113, 923.853 )
-GRAVITY = -10
+GRAVITY = -1
 
 [node name="HealthBar" parent="Player" index="9"]
 visible = false
@@ -89,8 +89,10 @@ max_distance = 1991.0
 
 [node name="AlienFriend" parent="." instance=ExtResource( 3 )]
 position = Vector2( 612.805, 926.534 )
-GRAVITY = -13
+GRAVITY = -1
 
 [editable path="Portal2D2"]
 
 [editable path="Player"]
+
+[editable path="AlienFriend"]

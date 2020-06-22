@@ -5,6 +5,8 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 47
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="QuitButton" type="Button"]
@@ -16,6 +18,7 @@ margin_left = 293.44
 margin_top = -458.6
 margin_right = 5188.44
 margin_bottom = 1364.4
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
