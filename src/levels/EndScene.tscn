@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/background/ufo-alien-spacecraft-with-light-beam-and-fog-ufo-vector-18662517.jpg" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/AlienFriend.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/music/Illuminati Song Full The XFiles Theme (online-audio-converter.com)(1).wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/desert_BG.png" type="Texture" id=7]
+[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=8]
+
+[node name="Level01" type="Node2D"]
+position = Vector2( 1, 0 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -66.8322 ],
+"_edit_vertical_guides_": [ 1698.71 ]
+}
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="backgroundcolor" type="TextureRect" parent="BackgroundLayer"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5942.53
+margin_top = -855.584
+margin_right = 6339.53
+margin_bottom = -741.584
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -516.831
+margin_top = -604.948
+margin_right = -13.8311
+margin_bottom = 513.052
+texture = ExtResource( 1 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+
+[node name="UserInterface" parent="InterfaceLayer" instance=ExtResource( 2 )]
+margin_left = 0.0561523
+margin_top = -76.0856
+margin_right = -318.944
+margin_bottom = 571.914
+
+[node name="Portal2D2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 6333, 1101.97 )
+next_scene = ExtResource( 8 )
+
+[node name="Sprite" parent="Portal2D2" index="0"]
+position = Vector2( 3820.03, -363.181 )
+
+[node name="CollisionShape2D" parent="Portal2D2" index="1"]
+position = Vector2( -5650.27, -1059.1 )
+
+[node name="ColorRect" parent="Portal2D2/TransitionLayer" index="0"]
+margin_left = -6.35913
+margin_top = -162.788
+margin_right = -292.359
+margin_bottom = -25.7877
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 687.113, 923.853 )
+GRAVITY = -10
+
+[node name="HealthBar" parent="Player" index="9"]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+visible = false
+position = Vector2( -201, -760 )
+stream = ExtResource( 6 )
+volume_db = -14.122
+autoplay = true
+stream_paused = true
+max_distance = 1991.0
+
+[node name="AlienFriend" parent="." instance=ExtResource( 3 )]
+position = Vector2( 612.805, 926.534 )
+GRAVITY = -10
+
+[editable path="Portal2D2"]
+
+[editable path="Player"]

@@ -2,8 +2,8 @@
 
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/laboratory.png" type="Texture" id=2]
+[ext_resource path="res://src/Screens/EndText.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/actors/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/RobotEnemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Cage.png" type="Texture" id=8]
@@ -382,7 +382,7 @@ texture = ExtResource( 8 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 118.099, -626.15 )
-next_scene = ExtResource( 5 )
+next_scene = ExtResource( 3 )
 
 [node name="RobotEnemy" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1323.02, -1627.59 )
