@@ -4,19 +4,19 @@
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="DynamicFont" id=2]
-size = 100
+[sub_resource type="DynamicFont" id=1]
+size = 92
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 47
 font_data = ExtResource( 6 )
 
 [node name="MainScreen" type="Control"]
-anchor_left = 0.012422
-anchor_top = 0.083427
-anchor_right = 1.01242
-anchor_bottom = 1.08343
+anchor_left = 0.0245548
+anchor_top = 0.247354
+anchor_right = 1.02455
+anchor_bottom = 1.24736
 margin_left = -7.21008
 margin_top = -21.6302
 margin_right = -7.21008
@@ -27,6 +27,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 176.647
@@ -40,25 +41,25 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -5.70435
-margin_top = -62.6625
-margin_right = 1976.3
-margin_bottom = 1167.34
-custom_fonts/normal_font = SubResource( 2 )
+margin_left = -29.0
+margin_top = -226.0
+margin_right = 1890.0
+margin_bottom = 1920.0
+focus_mode = 2
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[shake]This is the story of our hero
-"
-text = "This is the story of our hero
-"
+bbcode_text = "This is a story about our hero [rainbow]X Æ A-12 [img=<200>x<200>]assets/BlueAlien/BlueAlienIdle/blue__0000_idle_1.png[/img] [/rainbow]X Æ A-12's friend crashed their spaceship on earth, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race."
+text = "This is a story about our hero X Æ A-12  X Æ A-12's friend crashed their spaceship on earth, was kidnapped and taken to area 51 to have unspeakable tests run on them. X Æ A-12 will stop at nothing to rescue their friend from the treachery of the human race."
+selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.82
-anchor_right = 0.5
-anchor_bottom = 0.82
+anchor_left = 0.546187
+anchor_top = 0.72175
+anchor_right = 0.546187
+anchor_bottom = 0.72175
 margin_left = -262.916
 margin_top = -74.5164
 margin_right = 187.084
@@ -72,6 +73,6 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 450.0
 margin_bottom = 125.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Press to continue"
 next_scene_path = "res://src/Levels/prelevel1.tscn"

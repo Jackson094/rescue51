@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/background/41yTSfucaoL._SX355_.jpg" type="Texture" id=8]
 [ext_resource path="res://assets/aliens_game_over2.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/background/180126-alien-mn-1345_a45560a5a5fd8459dcc14b914ddf1dd2.jpg" type="Texture" id=10]
+[ext_resource path="res://src/UserInterface/gotomainbutton.gd" type="Script" id=11]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -103,6 +104,7 @@ margin_top = 92.0
 margin_right = 270.0
 margin_bottom = 176.0
 text = "Main Screen"
+script = ExtResource( 11 )
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 6 )]

@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/music/Illuminati Song Full The XFiles Theme (online-audio-converter.com)(1).wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/desert_BG.png" type="Texture" id=7]
-[ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Screens/EndText.tscn" type="PackedScene" id=8]
 
 [node name="Level01" type="Node2D"]
 position = Vector2( 1, 0 )
@@ -89,7 +89,7 @@ max_distance = 1991.0
 
 [node name="AlienFriend" parent="." instance=ExtResource( 3 )]
 position = Vector2( 612.805, 926.534 )
-GRAVITY = -10
+GRAVITY = -13
 
 [editable path="Portal2D2"]
 
