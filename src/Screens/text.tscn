@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/background/text-background.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/theme/button_normal2.tres" type="StyleBox" id=3]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme/button_pressed2.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -74,10 +76,10 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-anchor_left = 0.473931
-anchor_top = 0.698335
-anchor_right = 0.473931
-anchor_bottom = 0.698335
+anchor_left = 0.473917
+anchor_top = 0.698622
+anchor_right = 0.452042
+anchor_bottom = 0.680104
 margin_left = -262.916
 margin_top = -74.5164
 margin_right = 187.084
@@ -89,8 +91,10 @@ __meta__ = {
 [node name="PlayButton" parent="Menu" instance=ExtResource( 4 )]
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 450.0
-margin_bottom = 125.0
+margin_right = 408.0
+margin_bottom = 105.0
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 text = "Press to continue"
 next_scene_path = "res://src/Levels/prelevel1.tscn"

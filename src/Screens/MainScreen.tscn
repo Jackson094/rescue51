@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/CaesarDressing-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://src/actors/AlienFriend.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/music/The UFO Files.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 47
@@ -36,10 +38,8 @@ tile_data = PoolIntArray( 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -694.0
-margin_top = 60.35
-margin_right = -694.0
-margin_bottom = 60.35
+margin_top = -2.65002
+margin_bottom = -2.65002
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -121,4 +121,18 @@ position = Vector2( 27.8178, -222.542 )
 [node name="HealthBar" parent="Player" index="9"]
 visible = false
 
+[node name="AlienFriend" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1513.22, 432.939 )
+
+[node name="AnimatedSprite" parent="AlienFriend" index="0"]
+position = Vector2( 103.92, -170.632 )
+scale = Vector2( 0.982966, 0.691696 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -19.934
+autoplay = true
+
 [editable path="Player"]
+
+[editable path="AlienFriend"]

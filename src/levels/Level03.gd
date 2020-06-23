@@ -5,6 +5,8 @@ extends Node2D
 
 func _ready():
 	
+	
+	var music = $Player/music
 	var boss3_health =$RobotEnemy3/Health
 	var boss3_health_bar = $RobotEnemy3/HealthBar
 	
@@ -35,3 +37,5 @@ func _ready():
 	player_health.connect("changed",healthbar,"set_value")
 	player_health.connect("max_changed",healthbar,"set_max")
 	player_health.initialize()
+	
+

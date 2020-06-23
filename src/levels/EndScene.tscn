@@ -5,7 +5,7 @@
 [ext_resource path="res://src/actors/AlienFriend.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/music/Illuminati Song Full The XFiles Theme (online-audio-converter.com)(1).wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/music/Purple Planet Music - Eyeliner (1 42) 140bpm(1).wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/desert_BG.png" type="Texture" id=7]
 [ext_resource path="res://src/Screens/EndScreen.tscn" type="PackedScene" id=8]
 
@@ -79,12 +79,10 @@ GRAVITY = -1
 visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-visible = false
 position = Vector2( -201, -760 )
 stream = ExtResource( 6 )
-volume_db = -14.122
+volume_db = -4.589
 autoplay = true
-stream_paused = true
 max_distance = 1991.0
 
 [node name="AlienFriend" parent="." instance=ExtResource( 3 )]
