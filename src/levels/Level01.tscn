@@ -1041,7 +1041,7 @@ position = Vector2( 631.16, 826.159 )
 visible = false
 position = Vector2( -201, -760 )
 stream = ExtResource( 6 )
-volume_db = -14.122
+volume_db = -8.922
 autoplay = true
 max_distance = 1991.0
 

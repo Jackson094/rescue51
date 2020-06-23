@@ -130,7 +130,7 @@ scale = Vector2( 0.982966, 0.691696 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -19.934
+volume_db = -13.867
 autoplay = true
 
 [editable path="Player"]
