@@ -36,8 +36,10 @@ tile_data = PoolIntArray( 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -2.65002
-margin_bottom = -2.65002
+margin_left = -694.0
+margin_top = 60.35
+margin_right = -694.0
+margin_bottom = 60.35
 expand = true
 stretch_mode = 2
 __meta__ = {
