@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=7]
 [ext_resource path="res://src/actors/AlienFriend.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/music/The UFO Files.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/desert.jpg" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 47
@@ -40,8 +41,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -2.65002
 margin_bottom = -2.65002
+texture = ExtResource( 10 )
 expand = true
-stretch_mode = 2
+stretch_mode = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }

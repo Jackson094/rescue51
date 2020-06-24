@@ -132,7 +132,7 @@ autoplay = true
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 11322, 1481.24 )
+position = Vector2( 8568, 1600 )
 
 [node name="Enemy6" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2057.16, 1567.97 )
@@ -155,11 +155,26 @@ position = Vector2( 1720.79, 689.534 )
 [node name="Enemy7" parent="." instance=ExtResource( 11 )]
 position = Vector2( 8721.85, 2657.23 )
 
-[node name="Enemy8" parent="." instance=ExtResource( 11 )]
-position = Vector2( 11102.9, 2758.39 )
-
 [node name="Enemy9" parent="." instance=ExtResource( 11 )]
-position = Vector2( 11549.5, 1708.68 )
+position = Vector2( 8160, 1592 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 11 )]
+position = Vector2( 7784, 1592 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 11 )]
+position = Vector2( 9360, 296 )
+
+[node name="Enemy12" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6000, 248 )
+
+[node name="Enemy13" parent="." instance=ExtResource( 11 )]
+position = Vector2( 680, 2792 )
+
+[node name="Enemy14" parent="." instance=ExtResource( 11 )]
+position = Vector2( 728, 2416 )
+
+[node name="Enemy15" parent="." instance=ExtResource( 11 )]
+position = Vector2( 9544, 1616 )
 
 [editable path="Portal2D"]
 
