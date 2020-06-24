@@ -41,3 +41,6 @@ func _ready():
 	get_node("Node2D/AnimationPlayer").play("horizontal")
 	get_node("Node2D2/AnimationPlayer").play("horizontal")
 	get_node("Node2D3/AnimationPlayer").play("horizontal")
+	get_node("Node2D4/AnimationPlayer").play("horizontal")
+	get_node("Node2D5/AnimationPlayer").play("horizontal")
+	get_node("Node2D6/AnimationPlayer").play("horizontal")

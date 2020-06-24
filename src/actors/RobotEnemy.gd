@@ -16,8 +16,8 @@ var target_player_shoot = 90
 var dir = 0
 var next_jump_time = -1
 
-var eye_reach = 80
-var vision = 512
+var eye_reach = 200
+var vision = 768
 
 var is_dead = false
 

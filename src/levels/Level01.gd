@@ -17,5 +17,3 @@ func _ready():
 	player_health.connect("changed",healthbar,"set_value")
 	player_health.connect("max_changed",healthbar,"set_max")
 	player_health.initialize()
-	
-	get_node("Node2D/AnimationPlayer").play("horizontal")
