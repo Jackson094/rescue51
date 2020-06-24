@@ -15,12 +15,12 @@ func _ready():
 	boss3_health.initialize()
 	
 	
-	var boss2_health =$RobotEnemy2/Health
-	var boss2_health_bar = $RobotEnemy2/HealthBar
+#	var boss2_health =$RobotEnemy2/Health
+#	var boss2_health_bar = $RobotEnemy2/HealthBar
 	
-	boss2_health.connect("changed",boss2_health_bar,"set_value")
-	boss2_health.connect("max_changed",boss2_health_bar,"set_max")
-	boss2_health.initialize()
+#	boss2_health.connect("changed",boss2_health_bar,"set_value")
+#	boss2_health.connect("max_changed",boss2_health_bar,"set_max")
+#	boss2_health.initialize()
 	
 	
 	var boss_health =$RobotEnemy/Health
@@ -38,4 +38,6 @@ func _ready():
 	player_health.connect("max_changed",healthbar,"set_max")
 	player_health.initialize()
 	
-
+	get_node("Node2D/AnimationPlayer").play("horizontal")
+	get_node("Node2D2/AnimationPlayer").play("horizontal")
+	get_node("Node2D3/AnimationPlayer").play("horizontal")
