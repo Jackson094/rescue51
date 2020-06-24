@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/Spaceship crash animation.webm" type="VideoStream" id=1]
+[ext_resource path="res://assets/Spaceship-crash-animation.ogv" type="VideoStream" id=1]
 [ext_resource path="res://src/UserInterface/SceneChangeButton.tscn" type="PackedScene" id=2]
 
 [node name="Level03" type="Node2D"]
@@ -16,6 +16,7 @@ margin_top = 5.0
 margin_right = -11.0
 margin_bottom = -22.4401
 stream = ExtResource( 1 )
+volume_db = -19.05
 autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false
