@@ -25,20 +25,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "idle",
+"name": "shooting",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "dead",
 "speed": 7.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "shooting",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
@@ -54,6 +49,11 @@ animations = [ {
 "loop": true,
 "name": "jump",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

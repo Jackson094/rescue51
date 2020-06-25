@@ -64,6 +64,8 @@ func _process(delta):
 		velocity.x = next_direction * 400
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("running")
+		var robotsound = $RobotSound
+		robotsound.play()
 #	elif Player.position.x < position.x - target_player_shoot and sees_player():
 #		next_direction = -1
 #		next_direction_time = OS.get_ticks_msec() + react_time
@@ -76,6 +78,8 @@ func _process(delta):
 		velocity.x = next_direction * 400
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("running")
+		var robotsound = $RobotSound
+		robotsound.play()
 #	elif Player.position.x > position.x + target_player_shoot and sees_player():
 #		next_direction = 1
 #		next_direction_time = OS.get_ticks_msec() + react_time
